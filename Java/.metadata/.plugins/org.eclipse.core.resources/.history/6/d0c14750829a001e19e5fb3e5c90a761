@@ -1,0 +1,341 @@
+package handleMaganement.ObjCustomer;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Scanner;
+
+import handleMaganement.Person;
+import handleMaganement.ObjOrder.SanPham;
+
+public class Customer extends Person {
+	private String maKH;
+	private boolean customerType; // true for member, false for non-member
+	private int birthMonth;
+	private double discount;
+	private ArrayList<SanPham> order;
+
+	public Customer() {
+		// Default constructor
+	}
+
+	public Customer(String maKH, String name, String telephoneNumber, int age, String address, String gender,
+			boolean customerType, int birthMonth, Double discount, ArrayList<SanPham> order) {
+		super(name, telephoneNumber, age, address, gender);
+		this.maKH = maKH;
+		this.customerType = customerType;
+		this.birthMonth = birthMonth;
+		this.discount = discount;
+		this.order = order;
+	}
+
+	public String getMaKH() {
+		return maKH;
+	}
+
+	public void setMaKH(String maKH) {
+		this.maKH = maKH;
+	}
+
+	public boolean isCustomerType() {
+		return customerType;
+	}
+
+	public void setCustomerType(boolean customerType) {
+		this.customerType = customerType;
+	}
+
+	public int getBirthMonth() {
+		return birthMonth;
+	}
+
+	public void setBirthMonth(int birthMonth) {
+		this.birthMonth = birthMonth;
+	}
+
+	public Double getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(Double discount) {
+		this.discount = discount;
+	}
+
+	public ArrayList<SanPham> getOrder() {
+		return order;
+	}
+
+	public void setOrder(ArrayList<SanPham> order) {
+		this.order = order;
+	}
+
+	public void receiveOrder() {
+		System.out.println("Nhân viên " + getName() + " đang nhận đơn hàng từ khách hàng.");
+		createOrder();
+	}
+
+	public void createOrder() {
+		Scanner scanner = new Scanner(System.in);
+		Customer customer = new Customer();
+		System.out.println("Nhập thông tin đơn hàng:");
+
+		// Nhập thông tin về khách hàng
+		System.out.print("Bạn có muốn đăng ký thành viên không? (1. Có / 2. Không): ");
+		int choice = scanner.nextInt();
+		boolean isMember = choice == 1;
+		if (choice == 2) {
+			return;
+		}
+		if (isMember) {
+			System.out.print("Nhập tháng sinh nhật của bạn (1-12): ");
+			int birthMonth = scanner.nextInt();
+			this.setBirthMonth(birthMonth);
+			this.setCustomerType(isMember);
+		} else {
+			this.setCustomerType(isMember);
+		}
+		// System.out.print("Nhập số lượng sản phẩm trong đơn hàng: ");
+		//
+		// int numberOfProducts = scanner.nextInt();
+		//
+		// for (int i = 0; i < numberOfProducts; i++) {
+		// System.out.println("Nhập thông tin cho sản phẩm thứ " + (i + 1) + ":");
+		// SanPham sanPham = createProduct();
+		// order.add(sanPham); // Thêm sản phẩm vào đơn hàng của khách hàng
+		// }
+		InfoCustomer();
+		System.out.println("Đơn hàng đã được tạo!");
+	}
+
+	public SanPham createProduct() {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Nhập mã sản phẩm: ");
+		String maSanPham = scanner.next();
+
+		System.out.print("Nhập tên sản phẩm: ");
+		String tenSanPham = scanner.next();
+
+		System.out.print("Nhập loại sản phẩm: ");
+		String loai = scanner.next();
+
+		System.out.print("Nhập giá sản phẩm: ");
+		int gia = scanner.nextInt();
+
+		System.out.print("Có đá hay không? (true/false): ");
+		boolean coDa = scanner.nextBoolean();
+
+		// Additional variables assumed to be used in the constructor of SanPham
+		System.out.print("Nhập mô tả đá: ");
+		String moTaDa = scanner.next();
+
+		System.out.print("Có size hay không? (true/false): ");
+		boolean coSize = scanner.nextBoolean();
+
+		String size = "nhỏ"; // Default value for size
+		if (coSize) {
+			System.out.print("Nhập size: ");
+			size = scanner.nextLine();
+		}
+
+		System.out.print("Nhập ghi chú: ");
+		String ghiChu = scanner.next();
+
+		SanPham sanPham = new SanPham();
+		sanPham.setMaSanPham(maSanPham);
+		sanPham.setTenSanPham(tenSanPham);
+		sanPham.setLoai(loai);
+		sanPham.setGia(gia);
+		sanPham.setCoDa(coDa);
+		sanPham.setMoTaDa(moTaDa);
+		sanPham.setCoSize(coSize);
+		sanPham.setSize(size);
+		sanPham.setGhiChu(ghiChu);
+		// Tạo đối tượng SanPham và trả về
+		return sanPham;
+	}
+
+	public void InfoCustomer() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Nhập thông tin đơn hàng:");
+
+		System.out.println("nhập mã khách hàng (KH..)");
+		String maKh = scanner.nextLine();
+		// Nhập thông tin về khách hàng
+		System.out.print("Nhập tên khách hàng: ");
+		String customerName = scanner.nextLine();
+
+		// Kiểm tra tên khách hàng không được để trống
+		while (customerName.trim().isEmpty()) {
+			System.out.println("Tên khách hàng không được để trống. Vui lòng nhập lại.");
+			System.out.print("Nhập tên khách hàng: ");
+			customerName = scanner.nextLine();
+		}
+
+		System.out.print("Nhập số điện thoại: ");
+		String customerPhoneNumber = scanner.nextLine();
+
+		// Kiểm tra số điện thoại có đúng định dạng không
+		while (!customerPhoneNumber.matches("\\d{10}")) {
+			System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập lại (10 chữ số).");
+			System.out.print("Nhập số điện thoại: ");
+			customerPhoneNumber = scanner.nextLine();
+		}
+
+		System.out.print("Nhập tuổi: ");
+		while (!scanner.hasNextInt()) {
+			System.out.println("Tuổi phải là một số. Vui lòng nhập lại.");
+			System.out.print("Nhập tuổi: ");
+			scanner.next(); // Đọc bỏ giá trị không phải số để tránh lặp vô hạn
+		}
+		int age = scanner.nextInt();
+
+		// Kiểm tra tuổi phải lớn hơn 0
+		while (age <= 0) {
+			System.out.println("Tuổi phải lớn hơn 0. Vui lòng nhập lại.");
+			System.out.print("Nhập tuổi: ");
+			age = scanner.nextInt();
+		}
+		
+		System.out.print("Nhập tháng sinh: ");
+		while (!scanner.hasNextInt()) {
+			System.out.println("tháng sinh phải là một số. Vui lòng nhập lại.");
+			System.out.print("Nhập tháng sinh: ");
+			scanner.next(); // Đọc bỏ giá trị không phải số để tránh lặp vô hạn
+		}
+		int monthBirthday = Integer.parseInt(scanner.nextLine());
+
+		// Kiểm tra tuổi phải lớn hơn 0
+		while (monthBirthday <= 0 || monthBirthday > 12) {
+			System.out.println("Tháng sinh phải lớn hơn 0 và bé hơn 12. Vui lòng nhập lại.");
+			System.out.print("Nhập tháng sinh: ");
+			monthBirthday = scanner.nextInt();
+		}
+
+		// Tiêu thụ ký tự mới (new line) còn lại
+		scanner.nextLine();
+
+		System.out.print("Nhập địa chỉ: ");
+		String address = scanner.nextLine();
+
+		// Kiểm tra địa chỉ không được để trống
+		while (address.trim().isEmpty()) {
+			System.out.println("Địa chỉ không được để trống. Vui lòng nhập lại.");
+			System.out.print("Nhập địa chỉ: ");
+			address = scanner.nextLine();
+		}
+
+		System.out.print("Nhập giới tính: ");
+		String gender = scanner.nextLine();
+
+		// Kiểm tra giới tính không được để trống
+		while (gender.trim().isEmpty()) {
+			System.out.println("Giới tính không được để trống. Vui lòng nhập lại.");
+			System.out.print("Nhập giới tính: ");
+			gender = scanner.nextLine();
+		}
+
+		System.out.println("+-------------------------------------------------------+");
+		System.out.println("|                Thông Tin Khách Hàng                   |");
+		System.out.println("+-------------------------------------------------------+");
+
+		System.out.printf("| %-20s | %-30s |\n", "Mã KH", maKh);
+		System.out.printf("| %-20s | %-30s |\n", "Tên", customerName);
+		System.out.printf("| %-20s | %-30s |\n", "Số Điện Thoại", customerPhoneNumber);
+		System.out.printf("| %-20s | %-30s |\n", "Tuổi", age);
+		System.out.printf("| %-20s | %-30s |\n", "Địa Chỉ", address);
+		System.out.printf("| %-20s | %-30s |\n", "Giới Tính", gender);
+		System.out.printf("| %-20s | %-30s |\n", "Loại Khách Hàng",
+				isCustomerType() ? "Thành Viên" : "Không Thành Viên");
+		System.out.printf("| %-20s | %-30s |\n", "Tháng Sinh Nhật", getBirthMonth());
+		System.out.printf("| %-20s | %-30s |\n", "Giảm Giá", isCustomerType() ? getDiscount() : "Không giảm giá");
+
+		System.out.println("+-------------------------------------------------------+");
+		// Cập nhật thông tin của khách hàng hiện tại
+		this.setMaKH(maKh);
+		this.setName(customerName);
+		this.setAddress(address);
+		this.setGender(gender);
+		this.setTelephoneNumber(customerPhoneNumber);
+		this.setAge(age);
+		this.setCustomerType(false);
+		this.setDiscount(0.0);
+	}
+
+	public void applyDiscount(double totalAmount) {
+		if (isCustomerType() && getBirthMonth() == Calendar.getInstance().get(Calendar.MONTH) + 1) {
+			// Nếu là thành viên và là tháng sinh nhật, giảm 10%
+			double discountAmount = totalAmount * 0.1;
+			setDiscount(discountAmount);
+			System.out.println("Bạn đã được giảm giá " + discountAmount + " VND.");
+		} else {
+			System.out.println("Không có giảm giá nào được áp dụng.");
+		}
+	}
+
+	public void printInfo() {
+		System.out.println("+-------------------------------------------------------+");
+		System.out.println("|                Thông Tin Khách Hàng                   |");
+		System.out.println("+-------------------------------------------------------+");
+
+		System.out.printf("| %-20s | %-30s |\n", "Mã KH", getMaKH());
+		System.out.printf("| %-20s | %-30s |\n", "Tên", getName());
+		System.out.printf("| %-20s | %-30s |\n", "Số Điện Thoại", getTelephoneNumber());
+		System.out.printf("| %-20s | %-30s |\n", "Tuổi", getAge());
+		System.out.printf("| %-20s | %-30s |\n", "Địa Chỉ", getAddress());
+		System.out.printf("| %-20s | %-30s |\n", "Giới Tính", getGender());
+		System.out.printf("| %-20s | %-30s |\n", "Loại Khách Hàng",
+				isCustomerType() ? "Thành Viên" : "Không Thành Viên");
+		System.out.printf("| %-20s | %-30s |\n", "Tháng Sinh Nhật", getBirthMonth());
+		System.out.printf("| %-20s | %-30s |\n", "Giảm Giá", isCustomerType() ? getDiscount() : "Không giảm giá");
+
+		// Display information about the order
+//	    if (getOrder() != null && !getOrder().isEmpty()) {
+//	        System.out.println("+-------------------Thông Tin Đơn Hàng---------------------+");
+//	        for (SanPham sanPham : getOrder()) {
+//	            sanPham.printInfo(); // Assuming SanPham class has a printInfo method
+//	        }
+//	        System.out.println("+-------------------------------------------------------+");
+//	    } else {
+//	        System.out.println("Không có thông tin đơn hàng.");
+//	    }
+	}
+
+	public String getDataForFile() {
+		// Return formatted data for writing to the file
+		return getMaKH() + ";" + getName() + ";" + getTelephoneNumber() + ";" + getAge() + ";" + getAddress() + ";"
+				+ getGender() + ";" + isCustomerType() + ";" + getBirthMonth() + ";" + getDiscount() + ";";
+	}
+
+	public void getLineFromFile(String line) {
+		String[] data = line.toString().split(";");
+
+		if (data.length >= 8) {
+			setMaKH(data[0]);
+			setName(data[1]);
+			setTelephoneNumber(data[2]);
+			setAge(Integer.parseInt(data[3]));
+			setAddress(data[4]);
+			setGender(data[5]);
+			setCustomerType(Boolean.parseBoolean(data[6]));
+			setBirthMonth(Integer.parseInt(data[7]));
+			setDiscount(Double.parseDouble(data[8]));
+
+			// Nếu có thông tin về đơn hàng
+			if (data.length > 9) {
+				// Xử lý thông tin đơn hàng bắt đầu từ data[9]
+				for (int i = 8; i < data.length; i++) {
+					// Tạo và thêm sản phẩm vào order
+					SanPham sanPham = new SanPham();
+					if (data[i] == null) {
+						// Cài đặt thông tin sản phẩm từ data[i]
+						sanPham.setMaSanPham(data[i]); // Ví dụ: Gán mã sản phẩm từ dữ liệu
+						getOrder().add(sanPham);
+					}
+				}
+			}
+		} else {
+			System.out.println("Dữ liệu từ file không hợp lệ.");
+		}
+	}
+
+}

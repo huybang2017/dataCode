@@ -1,0 +1,32 @@
+/* desktop first */
+/* xây dựng website hoàn chỉnh ở màn hình kích thước lớn trước sau đó mới chỉnh code cho phù hợp ở màn hình nhỏ sau */
+
+h1{
+    background-color: yellow;
+}
+@media screen and (max-width: 992px) {
+    h1{
+        background-color: green;
+    }
+}
+@media screen and (max-width: 576px) {
+    h1{
+        background-color: blue;
+    }
+}
+/* mobile first */
+/* xây dựng website hoàn chỉnh ở màn hình kích thước nhỏ trước sau đó mới chỉnh code cho phu hợp ở màn hình lớn sau */
+
+h2{
+    background-color: blue;
+}
+@media screen and (max-width: 576px) {
+    h2{
+        background-color: green;
+    }
+}
+@media screen and (min-width: 992px) {
+    h2{
+        background-color: violet;
+    }
+}

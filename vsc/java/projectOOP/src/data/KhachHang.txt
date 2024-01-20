@@ -1,0 +1,17 @@
+Mã KH: KH01;Tên: John Doe;Số Điện Thoại: 123456789;Tuổi: 30;Địa Chỉ: 123 Main St;Giới Tính: Male;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+Mã KH: KH02;Tên: TEST;Số Điện Thoại: 987654321;Tuổi: 30;Địa Chỉ: 456 Oak St;Giới Tính: Female;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 8;Giảm Giá: 0.1;
+Mã KH: KH03;Tên: Bob Johnson;Số Điện Thoại: 555123456;Tuổi: 40;Địa Chỉ: 789 Pine St;Giới Tính: Male;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 2;Giảm Giá: 0.0;
+Mã KH: KH04;Tên: Emily Davis;Số Điện Thoại: 111222333;Tuổi: 22;Địa Chỉ: 101 Elm St;Giới Tính: Female;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 12;Giảm Giá: 0.0;
+Mã KH: KH05;Tên: Mike Wilson;Số Điện Thoại: 999888777;Tuổi: 35;Địa Chỉ: 222 Birch St;Giới Tính: Male;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 7;Giảm Giá: 0.0;
+Mã KH: KH06;Tên: Tây;Số Điện Thoại: 0899383561;Tuổi: 18;Địa Chỉ: hcm;Giới Tính: nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+Mã KH: KH07;Tên: Huy;Số Điện Thoại: 0123456789;Tuổi: 18;Địa Chỉ: hcm;Giới Tính: nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 6;Giảm Giá: 0.0;
+Mã KH: KH1969609735;Tên: quỳnh;Số Điện Thoại: 0123456789;Tuổi: 18;Địa Chỉ: hcm;Giới Tính: nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+Mã KH: KH1168000248;Tên: Tú;Số Điện Thoại: 1234567891;Tuổi: 12;Địa Chỉ: hcm;Giới Tính: nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 12;Giảm Giá: 0.1;
+Mã KH: KH1594741921;Tên: phát;Số Điện Thoại: 1234567891;Tuổi: 34;Địa Chỉ: hcm;Giới Tính: nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 4;Giảm Giá: 0.0;
+Mã KH: KH181895490;Tên: long;Số Điện Thoại: 0899383543;Tuổi: 87;Địa Chỉ: hcm;Giới Tính: nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 6;Giảm Giá: 0.0;
+Mã KH: KH1448398143;Tên: linh;Số Điện Thoại: 1234567891;Tuổi: 15;Địa Chỉ: hn;Giới Tính: nữ;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 3;Giảm Giá: 0.0;
+Mã KH: KH1486850219;Tên: Tay Nguyen;Số Điện Thoại: 0354454813;Tuổi: 20;Địa Chỉ: tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+Mã KH: KH1418681965;Tên: Nam Nguyen;Số Điện Thoại: 0377769567;Tuổi: 24;Địa Chỉ: Thang kien;Giới Tính: Nam;Loại Khách Hàng: Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.1;
+Mã KH: KH202375708;Tên: test 1;Số Điện Thoại: 0344443333;Tuổi: 20;Địa Chỉ: tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 12;Giảm Giá: 0.1;
+Mã KH: KH221000457;Tên: quý;Số Điện Thoại: 1234567891;Tuổi: 15;Địa Chỉ: hcm;Giới Tính: nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 3;Giảm Giá: 0.0;
+

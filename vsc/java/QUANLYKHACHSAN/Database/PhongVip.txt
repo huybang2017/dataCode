@@ -1,0 +1,5 @@
+PV2;500.000;may lanh;massage;view bien;free wifi;10
+PV3;500.000;may lanh;massage;view bien;free wifi;10
+PV4;500.000;may lanh;massage;view bien;free wifi;10
+PV5;500.000;may lanh;xong hoi;view trung tam;giam gia thue sau 24h;4
+PV6;200.000;may lanh;xong hoi;view mountain;free wifi;10

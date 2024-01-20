@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;baitapOOP.java&apos; to &apos;huong_doi_tuong/src/baitapOOP&apos;&#x0A;- Original project: &apos;huong_doi_tuong&apos;&#x0A;- Destination element: &apos;huong_doi_tuong/src/baitapOOP&apos;&#x0A;- Original element: &apos;baitapOOP.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;baitapOOP" element1="/src&lt;{baitapOOP.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1695562674248" units="1" version="1.0"/>
+</session>

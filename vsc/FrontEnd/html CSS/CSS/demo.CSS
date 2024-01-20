@@ -1,0 +1,46 @@
+*{
+    /* chỉ sử dụng với thẻ padding */
+    /* xử lí không bị rớt hàng */
+    box-sizing: border-box;
+}
+
+/* header */
+#header img{
+    width: 250px;
+}
+#header ul{
+    list-style: none; /*chỉnh kiểu danh sách*/
+    background-color: black;
+    padding: 15px 0;
+    margin: 5px 0 10px;
+}
+#header a{
+    color: white;
+    text-decoration: none; /*xoá gạch chân*/
+    font-size: 18px;
+}
+#header li{
+    /* đổi thành phân từ block sang inline */
+    display: inline;
+    margin: 0 15px;
+}
+
+/* carousel */
+#carousel{
+    background-image: url(./img/slider_1.jpg);
+    height: 550px;
+    /* kéo full viền */
+    background-size: cover;
+    /*tránh bị lặp*/
+    background-repeat: no-repeat;
+    /* căn vị trí ảnh dọc - ngang*/
+    background-position: center center;
+}
+
+/* PRODUCTS */
+.product__item{
+    /* căn các phần tử nằm trên cùng 1 hàng */
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}

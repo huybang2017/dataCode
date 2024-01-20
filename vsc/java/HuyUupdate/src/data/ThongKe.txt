@@ -1,0 +1,4 @@
+NV01;Vu Ba Kiet;135B Tay Lan;21;0976398402;Nam;Nhan Vien order;20.000.000 vnd
+NV02;Tai;321 Tay Lan;26;0783574761;Nam;Nhan vien pha che;10.000.000 vnd
+NV03;Nam;135 Hoang Van Thu;21;0976398123;Nam;Nhan vien quan ly;20.000.000 vnd
+NV04;Tuan;321 Hoang Van Thu;26;0783574345;Nu;nhanvien Pha che;10.000.000 vnd

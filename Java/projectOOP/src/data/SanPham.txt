@@ -1,0 +1,11 @@
+SP01;Cà phê sữa đá;Cà phê;20000 VND;Ghi chú cho cà phê sữa đá
+SP02;Trà đào;Trà;15000 VND;Ghi chú cho trà đào
+SP03;Sinh tố việt quất;Sinh tố;25000 VND;Ghi chú cho sinh tố việt quất
+SP04;Bạc xỉu;Cà phê;18000 VND;Ghi chú cho bạc xỉu
+SP05;Nước lọc;Nước;5000 VND;Ghi chú cho nước lọc
+SP06;Smoothie dưa hấu;Smoothie;22000 VND;Ghi chú cho smoothie dưa hấu
+SP07;Soda chanh;Soda;12000 VND;Ghi chú cho soda chanh
+SP08;Kem vanilla;Kem;15000 VND;Ghi chú cho kem vanilla
+SP09;Trà xanh matcha;Trà;18000 VND;Ghi chú cho trà xanh matcha
+SP10;Caramel macchiato;Cà phê;25000 VND;Ghi chú cho caramel macchiato
+SP11;Tay ;Person;2000;awr

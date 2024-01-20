@@ -1,0 +1,33 @@
+package vong_lap;
+
+import java.util.Scanner;
+
+public class du_an_tinh_toan {
+
+	public du_an_tinh_toan() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public static void in_menu(String nhap) {
+		System.out.println("Nhập 1 : tính tổng"
+				+ "Nhập 2 : tính hiệu"
+				+ "Nhập 3 : tính nhân"
+				+ "Nhập 4 : tính chia"
+				+ "Nhập 0 : thoát"
+				+ "tất cả nhập khac đều hợp lệ");
+		String scan = nhap.nextLine();
+	}
+	public static float xuly_menu(String nhap, int first_num , int second_num) {
+		float ket_qua = 0;
+		String xu_li;
+		do {
+			xu_li = in_menu(nhap);
+		} while ();
+		return ket_qua;
+	}
+
+}

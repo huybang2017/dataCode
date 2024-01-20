@@ -1,0 +1,167 @@
+<!-- khai báo phiên bản của html(ver5) -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="description" content="wed cua Huy" />
+    <title>wed của Huy</title>
+  </head>
+
+  <body>
+    <h1 style="color: red; background-color: green; text-align: center">
+      XIN CHÀO MỌI NGƯỜI
+    </h1>
+    <h2>mình là Huy</h2>
+    <h3>mình là Huy</h3>
+    <h4>mình là huy</h4>
+    <h5>mình là huy</h5>
+    <h6>mình là Huy</h6>
+
+    <!-- 3 loại liên kết:\
+        1. liên kết ngoại 
+        2. liên kết nội 
+        3. liên kết email -->
+    <!-- liên kết ngoại -->
+    <!-- target blank mở thêm 1 trang mới
+                seft tải lại trang đó (mặc định)-->
+    <a href="https://www.facebook.com/" target="_blank">
+      Đi tới facebook cá nhân</a
+    >
+    <br />
+
+    <!-- liên kết nội -->
+    <a href="#concho">đi tới ảnh con chó</a>
+    <br />
+    <a href="#table">đi tới bảng</a>
+    <br />
+
+    <!-- liên kết email -->
+    <a href="mailto:ndhbang2017@gmail.com">email:ndhbang2017</a>
+    <br />
+
+    <!-- liên kết phone -->
+    <a href="tel:0327027369">số phone</a>
+
+    <!-- lorem -->
+    <!-- b bôi đen -->
+    <!-- i in nguyên -->
+    <!-- br xuống dòng -->
+    <!-- span bọc lại 1 đoạn -->
+    <hr style="height: 5px; width: 400px" />
+    <!-- vị trí tương đối -->
+    <!-- % -->
+    <!-- align là canh lề đường kẻ so với trang wed
+        width là chiều đường kẻ ngang
+        size là độ rộng đường kẻ
+        noshade là không đổ bóng -->
+    <hr style="height: 5px; width: 50%" noshade />
+
+    <p style="text-align: center">
+      <b> Lorem ipsum dolor sit amet consectetur adipisicing elit</b>.
+      <i>Quis quibusdam omnis blanditiis cumque nulla</i> maiores doloremque,
+      quas natus pariatur voluptatum repellat tempora soluta laudantium magni
+      eligendi nesciunt non facere voluptates ducimus. Facere velit quis vero
+      aut voluptatibus inventore numquam quia rerum modi. Voluptatum hic ducimus
+      libero, harum quos sequi ratione!
+    </p>
+    <!-- thẻ danh sách không có thứ tự -->
+    <!-- thuộc tinh type -->
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+    <ul type="circle">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+    <ul type="square" style="color: red">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+
+    <!-- thẻ danh sách có thứ tự -->
+    <ol type="1">
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+    </ol>
+    <ol type="A">
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+    </ol>
+    <ol type="i">
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+    </ol>
+    <h2 id="concho">hình ảnh</h2>
+    <!-- thẻ hình ảnh img -->
+    <!-- src đường dẫn -->
+    <!-- alt là mô tả thông tin thẻ -->
+    <!-- boder là độ dài của viền ảnh solid màu viền -->
+    <img
+      style="width: 500px; border: 10px solid black"
+      align="center"
+      src="./img/hinh-anh-nhung-con-cho-de-thuong_092948873.jpg"
+      alt="dog"
+    />
+
+    <!-- tạo thẻ bảng -->
+    <!-- rowspan chiếm số hàng ngang
+            colspan chiếm số hàng dọc -->
+    <!-- cellspacing là khoảng cách giữa các ô
+                cellpadding là khoảng cách giữa kí tự với viền ô -->
+    <h2 id="table">1 các bảng</h2>
+    <table
+      border="3px"
+      style="width: 500px; height: 150px"
+      cellspacing="10px"
+      cellpadding="10px"
+      align="center"
+    >
+      <tr>
+        <th rowspan="3" colspan="2">HISTORY</th>
+        <!--dòng tiêu đề -->
+        <th>name</th>
+        <th>mark</th>
+      </tr>
+      <tr>
+        <td>tony</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>item1</td>
+        <td>item2</td>
+        <td>item3</td>
+        <td>item4</td>
+      </tr>
+    </table>
+
+    <!-- thẻ div -->
+    <div id="header" class="header">
+      <ul>
+        <li>
+          <a href="#">trang chủ</a>
+        </li>
+        <li>
+          <a href="#">lộ trình học</a>
+        </li>
+      </ul>
+    </div>
+    <!-- tên slider,banner,carousel -->
+    <div class="banner">
+      <img
+        src="./img/hinh-anh-nhung-con-cho-de-thuong_092948873.jpg"
+        alt="dog2"
+      />
+    </div>
+  </body>
+</html>

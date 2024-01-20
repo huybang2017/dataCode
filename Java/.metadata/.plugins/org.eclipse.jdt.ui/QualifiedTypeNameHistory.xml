@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
+    <fullyQualifiedTypeName name="java.util.Stack"/>
+    <fullyQualifiedTypeName name="java.lang.Class"/>
+    <fullyQualifiedTypeName name="demoOOP.demoOOP.sinhVien"/>
+    <fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
+    <fullyQualifiedTypeName name="demoOOP.GiaoVien"/>
+    <fullyQualifiedTypeName name="demoOOP.HieuTruong"/>
+    <fullyQualifiedTypeName name="baitapOOP.baitapOOP.ClassificationStudent"/>
+    <fullyQualifiedTypeName name="baitapOOP.baitapOOP.Student"/>
+    <fullyQualifiedTypeName name="huong_doi_tuong.student"/>
+    <fullyQualifiedTypeName name="baitapOOP.Student"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="handleMaganement.ObjEmployee.OrderEmployee"/>
+    <fullyQualifiedTypeName name="handleMaganement.ObjBill.Bill"/>
+    <fullyQualifiedTypeName name="handleMaganement.ObjEmployee.ManagerEmployee"/>
+    <fullyQualifiedTypeName name="handleMaganement.ObjTable.TableManager"/>
+    <fullyQualifiedTypeName name="handleMaganement.ObjOrder.SanPham"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="AbstractCore.TypeList"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.nio.charset.StandardCharsets"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="java.lang.Float"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="handleMaganement.ObjCustomer.Customer"/>
+    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="HandleList.ListCustomer"/>
+</qualifiedTypeNameHistroy>

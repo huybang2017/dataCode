@@ -1,0 +1,14 @@
+package challengeBuoi4;
+
+public class bt4 {
+
+	public static void checkInt(String s) {
+		char num [] = s.toCharArray()
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

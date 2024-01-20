@@ -1,0 +1,15 @@
+			LUỒNG
+->tăng tốc độ xử lý khi sử dụng luồng
+so sánh giữa tiến trình và luồng
+
+	tiến trình 		luồng
+có đoạn mã			không có đoạn mã
+có ít nhất 1 luồng			nằm trên 1 tiến trình
+các luồng có phạm vi 1 tiến trình	tồn tại nhiều luồng
+thao tác khởi tạo luân chuyển kém  <->	ngược lại
+bảo vệ tốt do có địa chỉ riêng     <->	địa chỉ chung cần bảo vệ
+trả lại các tài nguyên khi kt	           stack được thu hồi
+
+
+ưu điểm: khởi tạo nhanh chóng
+nhược điểm: luồng trong status chờ -> tất cả các luồng khác chờ theo -> không tận dụng được tính đa luồng khi lập trình

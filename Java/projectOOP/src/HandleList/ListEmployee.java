@@ -1,0 +1,633 @@
+package HandleList;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import AbstractCore.TypeList;
+import OverrideCore.SalaryBartender;
+import OverrideCore.SalaryCashier;
+import OverrideCore.SalaryManager;
+import OverrideCore.SalaryOrder;
+import handleMaganement.ObjEmployee.Employee;
+
+public class ListEmployee implements TypeList {
+    private int n;
+    private Employee[] listEmployee;
+    Stream stream;
+    // Employee employee = new Employee();
+    Scanner sc = new Scanner(System.in);
+
+    public ListEmployee() {
+        n = 0;
+        stream = new Stream();
+    }
+
+    public static void printLine() {
+        for (int i = 0; i < 130; i++) {
+            System.out.print("=");
+        }
+    }
+
+    public int countEmployee() {
+        int count = 0;
+        try {
+            FileInputStream fileInputStream = new FileInputStream(
+                    "/Users/m1lt43/Desktop/HuyUupdate/src/data/NhanVien.txt");
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, StandardCharsets.UTF_8);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+            String line = null;
+            try {
+                while ((line = bufferedReader.readLine()) != null) {
+                    count++;
+                }
+                n = count;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    public void readListEmployee() {
+        try {
+
+            ArrayList<String> data = stream.read("/home/huy/Documents/Java/projectOOP/src/data/NhanVien.txt");
+            n = data.size();
+            listEmployee = new Employee[n];
+
+            for (int i = 0; i < n; i++) {
+                listEmployee[i] = new Employee();
+                listEmployee[i].getLineFromFile(data.get(i));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateListEmployee() {
+        try {
+            // Use the Stream class to write data to the file
+            stream.addAll("/home/huy/Documents/Java/projectOOP/src/data/NhanVien.txt", getEmployeeDataList());
+            System.out.println("Da cap nhat danh sach");
+            display();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private ArrayList<String> getEmployeeDataList() {
+        ArrayList<String> dataList = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            if (listEmployee[i] != null) {
+                String line = listEmployee[i].mergeInformationToFile();
+                dataList.add(line);
+            }
+        }
+        return dataList;
+    }
+
+    public void addToListEmployee(Employee employee) {
+        listEmployee = Arrays.copyOf(listEmployee, n + 1);
+        for (int i = 0; i < n + 1; i++) {
+            if (i == n) {
+                listEmployee[i] = employee;
+            }
+        }
+        n++;
+        updateListEmployee();
+    }
+
+    @Override
+    public void add() {
+        Matcher matcher;
+        String selectTemp;
+        int select;
+
+        do {
+            System.out.println("+---------------------------------------------+");
+            System.out.println("|                Them nhan vien               |");
+            System.out.println("| -------------------=====--------------------|");
+            System.out.println("| 1. Them nhan vien order                     |");
+            System.out.println("| 2. Them nhan vien Bartender                 |");
+            System.out.println("| 3. Them nhan vien tinh tien                 |");
+            System.out.println("| 4. Them nhan vien quan ly                   |");
+            System.out.println("| 0. Tro ve                                   |");
+            System.out.println("+---------------------------------------------+");
+
+            do {
+                System.out.print("Nhap lua chon: ");
+                selectTemp = sc.nextLine();
+                String s = "^[0-9]{1}";
+                Pattern pattern = Pattern.compile(s);
+                matcher = pattern.matcher(selectTemp);
+            } while (!matcher.find());
+            select = Integer.parseInt(selectTemp);
+
+            switch (select) {
+                case 1:
+                    Employee emp1 = new SalaryBartender();
+                    emp1.inputForEmployee();
+                    emp1.position();
+                    emp1.salary();
+                    addToListEmployee(emp1);
+                    break;
+                case 2:
+                    Employee emp2 = new SalaryCashier();
+                    emp2.inputForEmployee();
+                    emp2.position();
+                    emp2.salary();
+                    addToListEmployee(emp2);
+                    break;
+                case 3:
+                    Employee emp3 = new SalaryManager();
+                    emp3.inputForEmployee();
+                    emp3.position();
+                    emp3.salary();
+                    addToListEmployee(emp3);
+                    break;
+
+                case 4:
+                    Employee emp4 = new SalaryManager();
+                    emp4.inputForEmployee();
+                    emp4.position();
+                    emp4.salary();
+                    addToListEmployee(emp4);
+                    break;
+                case 0:
+                    System.out.println("Tro ve");
+                    break;
+                default:
+                    System.out.println("Lua chon loi! Vui long chon lai");
+                    break;
+            }
+
+        } while (select != 0);
+    }
+
+    @Override
+    public void edit() {
+        Matcher matcher;
+        String temp, selectTemp;
+        int select;
+        display();
+        do {
+            System.out.print("Nhap ma nhan vien can thay doi: ");
+            temp = sc.nextLine();
+            String s = "^NV[0-9]{2}$";
+            Pattern pattern = Pattern.compile(s);
+            matcher = pattern.matcher(temp);
+        } while (!matcher.find());
+        boolean check = false;
+        for (int i = 0; i < n; i++) {
+            String key = listEmployee[i].getIdEmployee();
+            if (key.equals(temp)) {
+                check = true;
+                do {
+                    System.out.println("+---------------------------------------------+");
+                    System.out.println("|                Loai nhan vien               |");
+                    System.out.println("| -------------------=====--------------------|");
+                    System.out.println("| 1. Nhan vien order                          |");
+                    System.out.println("| 2. Nhan vien pha che                        |");
+                    System.out.println("| 3. Nhan vien tinh tien                      |");
+                    System.out.println("| 4. Nhan vien Quan ly                        |");
+                    System.out.println("| 0. Tro ve                                   |");
+                    System.out.println("+---------------------------------------------+");
+
+                    do {
+                        System.out.print("Nhap lua chon: ");
+                        selectTemp = sc.nextLine();
+                        String sSelect = "^[0-9]{1}";
+                        Pattern patternSelect = Pattern.compile(sSelect);
+                        matcher = patternSelect.matcher(selectTemp);
+                    } while (!matcher.find());
+                    select = Integer.parseInt(selectTemp);
+
+                    switch (select) {
+                        case 1:
+                            Employee emp1 = new SalaryOrder();
+                            System.out.println("Nhap thong tin nhan vien!");
+                            emp1.inputForEmployee();
+                            emp1.position();
+                            emp1.salary();
+                            listEmployee[i] = emp1;
+                            break;
+                        case 2:
+                            Employee emp2 = new SalaryBartender();
+                            System.out.println("Nhap thong tin nhan vien!");
+                            emp2.inputForEmployee();
+                            emp2.position();
+                            emp2.salary();
+                            listEmployee[i] = emp2;
+                            break;
+                        case 3:
+                            Employee emp3 = new SalaryCashier();
+                            System.out.println("Nhap thong tin nhan vien!");
+                            emp3.inputForEmployee();
+                            emp3.position();
+                            emp3.salary();
+                            listEmployee[i] = emp3;
+                            break;
+                        case 4:
+                            Employee emp4 = new SalaryManager();
+                            System.out.println("Nhap thong tin nhan vien!");
+                            emp4.inputForEmployee();
+                            emp4.position();
+                            emp4.salary();
+                            listEmployee[i] = emp4;
+                            break;
+                        case 0:
+                            System.out.println("Tro ve");
+                            break;
+                        default:
+                            System.out.println("Lua chon loi! Vui long chon lai");
+                            break;
+                    }
+
+                } while (select != 0);
+            }
+        }
+        if (check)
+            updateListEmployee();
+        else
+            System.out.println("Khong tim thay ma nhan vien");
+    }
+
+    @Override
+    public void remove() {
+        Matcher matcher;
+        String temp;
+        display();
+        do {
+            System.out.print("Nhap ma nhan vien: ");
+            temp = sc.nextLine();
+            String s = "^NV[0-9]{2}$";
+            Pattern pattern = Pattern.compile(s);
+            matcher = pattern.matcher(temp);
+        } while (!matcher.find());
+        boolean check = false;
+        for (int i = 0; i < n; i++)
+
+        {
+            String key = listEmployee[i].getIdEmployee();
+            if (key.contentEquals(temp)) {
+                check = true;
+                for (int j = i; j < n - 1; j++) {
+                    listEmployee[j] = listEmployee[j + 1];
+                }
+                n--;
+                listEmployee = Arrays.copyOf(listEmployee, n);
+            }
+        }
+        if (check)
+            updateListEmployee();
+        else
+            System.out.println("Khong tin thay nhan vien!");
+    }
+
+    @Override
+    public void find() {
+        Matcher matcher;
+        String temp;
+        String selectTemp;
+        int select;
+        do {
+            System.out.println();
+            System.out.println("+---------------------------------------------+");
+            System.out.println("        Tim kiem trong DS nhan vien           ");
+            System.out.println("| -------------------=====--------------------|");
+            System.out.println("| 1. Tim kiem theo ma Nhan vien               |");
+            System.out.println("| 2. Tim kiem theo Ten Nhan vien              |");
+            System.out.println("| 3. Tim kiem theo dia chi Nhan vien          |");
+            System.out.println("| 4. Tim kiem theo tuoi Nhan vien             |");
+            System.out.println("| 5. Tim kiem theo so dien thoai Nhan vien    |");
+            System.out.println("| 6. Tim kiem theo chuc vu Nhan vien          |");
+            System.out.println("| 7. Tim kiem theo luong Nhan vien            |");
+            System.out.println("| 0. Tro ve                                   |");
+            System.out.println("+---------------------------------------------+");
+            do {
+                System.out.print("Nhap lua chon: ");
+                selectTemp = sc.nextLine();
+                String s = "^[0-9]{1}";
+                Pattern pattern = Pattern.compile(s);
+                matcher = pattern.matcher(selectTemp);
+            } while (!matcher.find());
+            select = Integer.parseInt(selectTemp);
+            switch (select) {
+                case 1:
+                    System.out.println("Ban chon Tim kiem theo ma nhan vien");
+                    do {
+                        System.out.print("Nhap ma nhan vien: ");
+                        temp = sc.nextLine();
+                        String s = "^NV[0-9]{2}$";
+                        Pattern pattern = Pattern.compile(s);
+                        matcher = pattern.matcher(temp);
+                    } while (!matcher.find());
+                    printLine();
+                    System.out.printf("\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                            "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                    for (int i = 0; i < n; i++) {
+                        String key = listEmployee[i].getIdEmployee();
+                        if (key.contentEquals(temp)) {
+                            listEmployee[i].output();
+                        }
+                    }
+                    printLine();
+                    break;
+                case 2:
+                    System.out.println("Ban chon Tim kiem theo Ten Nhan vien");
+                    do {
+                        System.out.print("Nhap Ten Nhan vien: ");
+                        temp = sc.nextLine();
+                        String s = "[^0-9]";
+                        Pattern pattern = Pattern.compile(s);
+                        matcher = pattern.matcher(temp);
+                    } while (!matcher.find());
+                    printLine();
+                    System.out.printf("\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                            "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                    for (int i = 0; i < n; i++) {
+                        String key = listEmployee[i].getName().toLowerCase();
+                        if (key.contains(temp.toLowerCase())) {
+                            listEmployee[i].output();
+                        }
+                    }
+                    printLine();
+                    break;
+                case 3:
+                    System.out.println("Ban chon Tim kiem theo dia chi Nhan vien");
+                    do {
+                        System.out.print("Nhap Dia chi Nhan vien: ");
+                        temp = sc.nextLine();
+                        String s = "[^0-9]";
+                        Pattern pattern = Pattern.compile(s);
+                        matcher = pattern.matcher(temp);
+                    } while (!matcher.find());
+                    printLine();
+                    System.out.printf("\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                            "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                    for (int i = 0; i < n; i++) {
+                        String key = listEmployee[i].getAddress().toLowerCase();
+                        if (key.contains(temp.toLowerCase())) {
+                            listEmployee[i].output();
+                        }
+                    }
+                    printLine();
+                    break;
+
+                case 4:
+                    System.out.println("Ban chon Tim kiem theo tuoi Nhan vien");
+                    do {
+                        System.out.print("Nhap tuoi Nhan vien: ");
+                        temp = sc.nextLine();
+                        String s = "^[0-9]{2}";
+                        Pattern pattern = Pattern.compile(s);
+                        matcher = pattern.matcher(temp);
+                    } while (!matcher.find());
+
+                    printLine();
+                    System.out.printf("\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                            "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+
+                    for (int i = 0; i < n; i++) {
+                        String key = String.valueOf(listEmployee[i].getAge());
+                        if (key.equals(temp)) {
+                            listEmployee[i].output();
+                        }
+                    }
+
+                    printLine();
+                    break;
+
+                case 5:
+                    System.out.println("Ban chon Tim kiem theo so dien thoai Nhan vien");
+                    do {
+                        System.out.print("Nhap so dien thoai Nhan vien: ");
+                        temp = sc.nextLine();
+                        String s = "^[0-9]{10,11}";
+                        Pattern pattern = Pattern.compile(s);
+                        matcher = pattern.matcher(temp);
+                    } while (!matcher.find());
+
+                    printLine();
+                    System.out.printf("\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                            "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                    for (int i = 0; i < n; i++) {
+                        String key = listEmployee[i].getTelephoneNumber();
+                        if (key.contentEquals(temp)) {
+                            listEmployee[i].output();
+                        }
+                    }
+                    printLine();
+                    break;
+
+                case 6:
+                    System.out.println("Ban chon Tim kiem theo Chuc vu Nhan vien");
+                    String selectPositionTemp;
+                    int selectPosition;
+
+                    do {
+                        System.out.println();
+                        System.out.println("+-------------------------------------------+");
+                        System.out.println("|        Chon loai Nhan vien                |");
+                        System.out.println("| ------------------=====-------------------|");
+                        System.out.println("| 1. Nhan vien dat don                      |");
+                        System.out.println("| 2. Nhan vien nhan vien pha che            |");
+                        System.out.println("| 3. Nhan vien quan ly                      |");
+                        System.out.println("| 0. Nhan vien tinh tien                    |");
+                        System.out.println("| 0. Tro ve                                 |");
+                        System.out.println("+-------------------------------------------+");
+
+                        do {
+                            System.out.print("Nhap lua chon: ");
+                            selectPositionTemp = sc.nextLine();
+                            String s = "^[0-9]{1}";
+                            Pattern pattern = Pattern.compile(s);
+                            matcher = pattern.matcher(selectPositionTemp);
+                        } while (!matcher.find());
+                        selectPosition = Integer.parseInt(selectPositionTemp);
+
+                        switch (selectPosition) {
+                            case 1:
+                                System.out.println("Ban chon Nhan vien dat don ");
+                                String ReceptionistTemp = "Order employee";
+
+                                printLine();
+                                System.out.printf(
+                                        "\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                                        "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                                for (int i = 0; i < n; i++) {
+                                    String key = listEmployee[i].getPosition().toLowerCase();
+                                    if (key.contentEquals(ReceptionistTemp.toLowerCase())) {
+                                        listEmployee[i].output();
+                                    }
+                                }
+                                printLine();
+                                break;
+
+                            case 2:
+                                System.out.println("Ban chon nhan vien pha che");
+                                String CleancerTemp = "Bartender Employee";
+
+                                printLine();
+                                System.out.printf(
+                                        "\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                                        "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                                for (int i = 0; i < n; i++) {
+                                    String key = listEmployee[i].getPosition().toLowerCase();
+                                    if (key.contentEquals(CleancerTemp.toLowerCase())) {
+                                        listEmployee[i].output();
+                                    }
+                                }
+                                printLine();
+                                break;
+
+                            case 3:
+                                System.out.println("Ban chon nhan vien quan ly");
+                                String ManagerTemp = "Manager Employee";
+
+                                printLine();
+                                System.out.printf(
+                                        "\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                                        "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                                for (int i = 0; i < n; i++) {
+                                    String key = listEmployee[i].getPosition().toLowerCase();
+                                    if (key.contentEquals(ManagerTemp.toLowerCase())) {
+                                        listEmployee[i].output();
+                                    }
+                                }
+                                printLine();
+                                break;
+
+                            case 0:
+                                System.out.println("Tro lai");
+                                break;
+                            default:
+                                System.out.println("Loi lua chon! Vui long chon lai");
+                                break;
+                        }
+                    } while (selectPosition != 0);
+                    break;
+
+                case 7:
+                    System.out.println("Ban chon Tim kiem theo Chuc vu Nhan vien");
+                    String selectSalaryTemp;
+                    int selectSalary;
+
+                    do {
+                        System.out.println();
+                        System.out.println("+-------------------------------------------+");
+                        System.out.println("|        Chon Luong Nhan vien               |");
+                        System.out.println("| ------------------=====-------------------|");
+                        System.out.println("| 1. 7.000.000 vnd                          |");
+                        System.out.println("| 2. 8.000.000 vnd                          |");
+                        System.out.println("| 3. 10.000.000 vnd                         |");
+                        System.out.println("| 0. Tro ve                                 |");
+                        System.out.println("+-------------------------------------------+");
+
+                        do {
+                            System.out.print("Nhap lua chon: ");
+                            selectSalaryTemp = sc.nextLine();
+                            String s = "^[0-9]{1}";
+                            Pattern pattern = Pattern.compile(s);
+                            matcher = pattern.matcher(selectSalaryTemp);
+                        } while (!matcher.find());
+                        selectSalary = Integer.parseInt(selectSalaryTemp);
+
+                        switch (selectSalary) {
+                            case 1:
+                                System.out.println("Ban chon luong 10.000.000 vnd");
+                                String ReceptionistTemp = "15.000.000 vnd";
+
+                                printLine();
+                                System.out.printf(
+                                        "\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                                        "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                                for (int i = 0; i < n; i++) {
+                                    String key = listEmployee[i].getSalary().toLowerCase();
+                                    if (key.contentEquals(ReceptionistTemp.toLowerCase())) {
+                                        listEmployee[i].output();
+                                    }
+                                }
+                                printLine();
+                                break;
+
+                            case 2:
+                                System.out.println("Ban chon 10.000.000 vnd");
+                                String CleancerTemp = "10.000.000 vnd";
+
+                                printLine();
+                                System.out.printf(
+                                        "\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                                        "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                                for (int i = 0; i < n; i++) {
+                                    String key = listEmployee[i].getSalary().toLowerCase();
+                                    if (key.contentEquals(CleancerTemp.toLowerCase())) {
+                                        listEmployee[i].output();
+                                    }
+                                }
+                                printLine();
+                                break;
+
+                            case 3:
+                                System.out.println("Ban chon 7.000.000 vnd");
+                                String ManagerTemp = "7.000.000 vnd";
+
+                                printLine();
+                                System.out.printf(
+                                        "\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s |\u001B[0m\n",
+                                        "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Chuc vu", "Luong");
+                                for (int i = 0; i < n; i++) {
+                                    String key = listEmployee[i].getSalary().toLowerCase();
+                                    if (key.contentEquals(ManagerTemp.toLowerCase())) {
+                                        listEmployee[i].output();
+                                    }
+                                }
+                                printLine();
+                                break;
+
+                            case 0:
+                                System.out.println("Tro lai");
+                                break;
+                            default:
+                                System.out.println("Loi lua chon! Vui long chon lai");
+                                break;
+                        }
+                    } while (selectSalary != 0);
+                    break;
+
+                case 0:
+                    System.out.println("Tro lai");
+                    break;
+                default:
+                    System.out.println("Loi lua chon! Vui long chon lai");
+                    break;
+            }
+        } while (select != 0);
+
+    }
+
+    @Override
+    public void display() {
+        System.out.printf("\n\u001B[44m| %-10s %-20s %-30s %-10s %-15s %-15s %-20s %-10s |\u001B[0m\n",
+                "Ma NV", "Ho Ten", "Dia Chi", "Tuoi", "So dien thoai", "Gioi tinh", "Chuc vu", "Luong");
+
+        for (int i = 0; i < n; i++) {
+            listEmployee[i].output();
+        }
+        printLine();
+        System.out.println("");
+    }
+
+}

@@ -1,0 +1,11 @@
+1,Cà phê sữa đá,Cà phê,20000,true,Đá,true,Lớn,Không đường
+2,Trà đào,Trà,15000,false,null,false,Nhỏ,null
+3,Sinh tố việt quất,Sinh tố,25000,false,null,true,Vừa,null
+4,Bạc xỉu,Cà phê,18000,true,Sữa đặc,false,Nhỏ,Đường ít
+5,nước lọc mát,nước,5000,true,ủ lạnh,false,nhỏ,có thể order nước lọc không lạnh
+6,Smoothie dưa hấu,Smoothie,22000,true,Dưa hấu,true,Lớn,null
+7,Soda chanh,Soda,12000,true,Chanh,true,Vừa,null
+8,Kem vanilla,Kem,15000,true,null,false,Nhỏ,null
+9,Trà xanh matcha,Trà,18000,false,null,true,Lớn,null
+10,Caramel macchiato,Cà phê,25000,true,Sữa đặc,true,Vừa,Caramel ít đường
+11,cà phê dừa,cà phê,50000,true,vừa,true,nhỏ,ngọt

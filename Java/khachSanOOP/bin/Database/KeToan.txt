@@ -1,0 +1,4 @@
+KT2;Pham Ngoc c;22;Nam;123/12 Lang Chai;duongtank@gmail.com;092847382;ca sang;43
+KT1;Pham Ngoc t;21;Nam;13/20 Pham Ngoc Thach;NVA@gmail.com;093890944;ca toi;65
+KT3;Pham Ngoc f;22;Nam;Indonesia;ngoKHi@gmail.com;092847382;ca sang;72
+KT4;Pham Ngoc Tinh;22;Nu;625 Chao Lua;ngotinh@gmail.com;092847382;full;41

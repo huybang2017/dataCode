@@ -1,0 +1,103 @@
+.header {
+    .container-fluid {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .header-logo {
+            display: flex;
+
+            i {
+                font-size: 50px;
+                color: $yellow-600;
+            }
+
+            p {
+                font-size: 30px;
+                text-transform: uppercase;
+                font-weight: 800;
+            }
+        }
+
+        .header-navigation {
+            .container-fluid {
+                #navbarNav {
+                    .navbar-nav {
+                        font-weight: 600;
+
+                        .dropdown-menu {
+                            width: 30vw;
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+
+                            .dropdown-item {
+                                text-align: center;
+                            }
+                        }
+
+                        .home {
+
+                            .nav-link {
+                                transition: all .5s;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                    color: $orange-700;
+                                }
+                            }
+
+
+                        }
+
+                        .product {
+                            .nav-link {
+                                transition: all .5s;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                    color: $orange-700;
+                                }
+                            }
+                        }
+
+                        .review {
+                            .nav-link {
+                                transition: all .5s;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                    color: $orange-700;
+                                }
+                            }
+                        }
+
+                        .aboutUs {
+                            .nav-link {
+                                transition: all .5s;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                    color: $orange-700;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .header-account {
+            display: flex;
+            justify-content: space-around;
+
+            i {
+                font-size: 20px;
+                margin: 0 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}

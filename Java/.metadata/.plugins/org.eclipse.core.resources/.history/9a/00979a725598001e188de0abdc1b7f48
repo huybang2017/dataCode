@@ -1,0 +1,49 @@
+# Customer 1
+Name: John Doe
+Telephone Number: 123456789
+Age: 25
+Address: 123 Main St
+Gender: Male
+Is Member: true
+Birth Month: 5
+Discount: 0.1
+
+# Customer 2
+Name: Jane Smith
+Telephone Number: 987654321
+Age: 30
+Address: 456 Oak St
+Gender: Female
+Is Member: false
+Birth Month: 8
+Discount: 0.0
+
+# Customer 3
+Name: Bob Johnson
+Telephone Number: 555123456
+Age: 40
+Address: 789 Pine St
+Gender: Male
+Is Member: true
+Birth Month: 2
+Discount: 0.15
+
+# Customer 4
+Name: Emily Davis
+Telephone Number: 111222333
+Age: 22
+Address: 101 Elm St
+Gender: Female
+Is Member: false
+Birth Month: 12
+Discount: 0.0
+
+# Customer 5
+Name: Mike Wilson
+Telephone Number: 999888777
+Age: 35
+Address: 222 Birch St
+Gender: Male
+Is Member: true
+Birth Month: 7
+Discount: 0.12

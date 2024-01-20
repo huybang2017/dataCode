@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ResizableDialogBounds">
+		<item key="x" value="20"/>
+		<item key="y" value="20"/>
+		<item key="width" value="1620"/>
+		<item key="height" value="808"/>
+	</section>
+	<section name="PreviewPatchPage">
+	</section>
+	<section name="PatchWizard">
+		<item key="DIALOG_X_ORIGIN" value="20"/>
+		<item key="DIALOG_Y_ORIGIN" value="20"/>
+		<item key="DIALOG_WIDTH" value="845"/>
+		<item key="DIALOG_HEIGHT" value="716"/>
+		<item key="DIALOG_FONT_NAME" value="1|Liberation Serif|13.0|0|GTK|1|"/>
+	</section>
+</section>

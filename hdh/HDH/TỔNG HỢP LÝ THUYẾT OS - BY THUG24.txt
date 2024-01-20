@@ -1,0 +1,289 @@
+----------------------------------TỔNG ÔN LÝ THUYẾT HỆ ĐIỀU HÀNH--------------------- 
+- Môn: Hệ điều hành
+- Cập nhật: v1.1 20h23 21/12/2023
+- Tác giả: THug24
+- Tài liệu tham khảo: Từ slide bài giảng của các giảng viên
+	+ Nguyễn Võ Lâm Giang SGU
+
+------------------------CHƯƠNG 1: TỔNG QUAN VỀ HỆ ĐIỀU HÀNH---------------------------------
+
+1. Hệ điều hành là gì ?
+Trl: 
+- Là một phần mềm hệ thống quản lý tất cả phần cứng và
+phần mềm trên máy tính.
+- Là một phần mềm đặc biệt đóng vai trò trung gian giữa
+người dùng và phần cứng máy tính, nhằm cung cấp một môi
+trường giúp người dùng:
+	+ Sử dụng phần cứng.
+	+ Thực thi các chương trình hiệu quả.
+	+ Bảo mật, ngăn chặn các chương trình của người dùng can
+thiệp vào hoạt động bình thường của hệ thống.
+
+2. Phân loại:
+- Hệ điều hành có thể phân loại dựa trên nhiều góc độ:
+	+ Góc độ máy tính
+	+ Góc độ người dùng và số chương trình sử dụng cùng lúc
+	+ Góc độ người dùng truy xuất tài nguyên cùng lúc
+	+ Góc độ hình thức xử lý
+
+
+3. Chức năng chính:
+
+- Resource Management (quản lý tài nguyên)
+    + Cung cấp và quản lý việc sử dụng phần cứng đối với phần mềm/người dùng.
+- Process Management (quản lý tiến trình)
+    + Tạo và quản lý hoạt động, lập lịch CPU, đồng bộ giữa các process.
+- Storage Management (quản lý lưu trữ)
+    + Sử dụng file system (như NTFS, ext, NFS) để quản lý dữ liệu trên đĩa.
+- Memory Management (quản lý bộ nhớ)
+    + Quản lý, theo dõi, cấp phát và thu hồi bộ nhớ chính.
+- Security/Privacy Management (quản lý bảo mật/quyền)
+    + Bảo mật dữ liệu user khỏi các truy cập không được phép từ ứng dụng/user khác.
+- Các chức năng khác: networking, job accounting, logging,...
+
+------------------------CHƯƠNG 2: PROCESS (TIẾN TRÌNH) ---------------------------------
+
+1. Khái niệm và thành phần:
+=> Process (tiến trình) là một chương trình máy tính đang được thực thi (Được đưa vào bộ nhớ chính (RAM) )
+	➔ Phân biệt Process (tiến trình) vs Program (chương trình)
+
+- Một tiến trình trong bộ nhớ có:
+▪ Stack: dữ liệu tạm (tham số của func, biến cục bộ)
+▪ Heap: bộ nhớ động được cấp phát khi tiến trình chạy.
+▪ Data section: biến toàn cục.
+▪ Text section: program code.
+
+
+2. Quá trình chuyển đổi giữa các process
+Một process khi thực thi sẽ chuyển đổi giữa các trạng thái:
+▪ New: tiến trình vừa được tạo
+▪ Ready: sẵn sàng chờ được cấp CPU
+▪ Running: đang thực thi. Lúc này Process có thể có 3 tình huống.
+	+ Chuyển qua Terminated nếu hoàn thành.
+	+ Nếu bị OS ngắt sẽ chuyển thành Ready để chờ được cấp tiếp CPU và sẽ tiếp tục Running khi được cấp
+	+ Nếu cần cần được giao tài nguyên thì sẽ vào trạng thái Waiting để đợi I\O. Sau khi được cấp xong sẽ vào lại trạng thái Ready.
+▪ Waiting: chờ một sự kiện xảy ra (ví dụ I/O)
+▪ Terminated: kết thúc thực thi.
+
+
+3. Context switch (Chuyển ngữ cảnh)
+=> Context switch (chuyển ngữ cảnh) xảy ra khi CPU được chuyển từ một process này sang process khác. 
+  + Sử dụng thông tin trong PCB. 
+  + Thời gian chuyển ngữ cảnh thì CPU bị lãng phí -> Tối kị của OS
+  + OS& PCB càng phức tạp
+  
+  → thời gian chuyển ngữ cảnh càng lớn
+
+4. Cơ chế liên lạc giữa các tiến trình
+	▪ Shared memory
+	▪ Message passing (Message queues)
+	▪ Pipe (Đường ống)
+	-> Cụ thể hãy xem trong slide bài giảng.
+
+
+------------------------CHƯƠNG 3: THREAD (LUỒNG) ---------------------------------
+1. Khái niệm
+- Khái niệm: Thread (còn gọi là “luồng” hoặc có thể được gọi là một tiến trình nhẹ “lightweight process”) là một phần của tiến trình, là đơn vị cơ bản để phân bổ thời gian sử dụng CPU.
+
+2. Tại sao phải sử dụng luồng mà không dùng Process?
+- Tạo và hủy tiến trình tốn nhiều chi phí (context switch)
+- Các tiến trình độc lập tài nguyên.
+- Giao tiếp giữa các tiến trình sử dụng IPC phức tạp.
+- Multitasking bằng process không hiệu quả bằng thread:
+    + Thời gian chuyển đổi giữa các thread ngắn.
+    + Chia sẻ bộ nhớ giữa các thread trong 1 process.
+- Các thread trong một process chia sẻ một số loại tài nguyên, đặc biệt là vùng nhớ
+-> giao tiếp giữa các thread trong một process dễ dàng hơn giữa các process
+
+
+3. Single-thread process vs Multi-thread process
+
+- Single-thread process:
+	+ Chỉ có một luồng thực thi trong mỗi quy trình.
+	+ Luồng này thực hiện tất cả công việc, từ quản lý tài nguyên đến thực hiện các tác vụ chính của ứng dụng.
+	+ Chỉ có thể thực hiện một tác vụ tại một thời điểm.
+
+- Multi-thread process:
+	+ Có nhiều luồng thực thi trong mỗi quy trình.
+	+ Các luồng chia sẻ cùng một không gian địa chỉ và tài nguyên nhưng có thể thực hiện các nhiệm vụ khác nhau đồng thời.
+	+ Phân chia công việc thành các đơn vị nhỏ hơn, mỗi luồng thực hiện một nhiệm vụ cụ thể.
+	+ Có thể tận dụng các ưu điểm của việc thực hiện đa luồng, chẳng hạn như tăng hiệu suất và đáp ứng nhanh chóng với các sự kiện đồng thời.
+
+4. User thread vs kernel thread.
+
+- User Thread (Luồng Người Dùng):
+	+ Quản lý tại phía Ứng dụng: User thread được quản lý hoàn toàn tại mức ứng dụng và không cần sự can thiệp của hạ tầng hạt nhân (kernel).
+	+ Nhanh và Linh hoạt: Việc quản lý tại người dùng giúp user thread được tạo và kết thúc một cách nhanh chóng và linh hoạt.
+	+ Thực hiện Bởi Thư Viện: Thường được thư viện thread ở mức người dùng (user-level thread library) quản lý.
+	+ Bị Chặn Bởi Blocking System Calls: Khi một user thread thực hiện một hệ thống gọi chặn (blocking), toàn bộ quy trình sẽ bị chặn.
+
+- Kernel Thread (Luồng Kernel):
+	+ Quản lý tại Hạ Tầng Hạt Nhân: Kernel thread được quản lý bởi hạ tầng hạt nhân của hệ điều hành.
+	+ Chậm Hơn User Thread: Việc quản lý tại kernel thường làm cho việc tạo và kết thúc thread chậm hơn so với user thread.
+	+ Chịu Ảnh Hưởng ít Bởi Blocking System Calls: Kernel thread ít bị ảnh hưởng khi thực hiện các hệ thống gọi chặn, chỉ là thread cụ thể đang chạy bị chặn.
+	+ Thực Hiện Bởi Hạ Tầng Hạt Nhân: Hạ tầng hạt nhân của hệ điều hành quản lý và thực hiện các kernel thread.
+
+5. Multithreading models:
+	5.1.Many to One (Nhiều tới Một):
+		- Khái niệm: Nhiều User Threads (luồng người dùng) được ánh xạ vào một Kernel Thread (luồng hạt nhân) duy nhất.
+   		- Ưu điểm: Hiệu suất cao khi có nhiều luồng người dùng.
+		- Nhược điểm: Nếu một luồng gặp vấn đề, tất cả các luồng khác cũng bị ảnh hưởng. Không tận dụng được đa nhân nhiệm.
+
+	5.2 One to One (Một tới Một):
+		- Khái niệm: Mỗi User Thread được ánh xạ vào một Kernel Thread riêng biệt.
+		- Ưu điểm: Đa nhân nhiệm tốt, nếu một luồng gặp vấn đề, chỉ luồng đó bị ảnh hưởng.
+		- Nhược điểm: Số lượng Kernel Thread có thể giới hạn, do đó, số lượng luồng cũng bị hạn chế.
+
+	5.3 Many to Many (Nhiều tới Nhiều):
+		- Khái niệm: Nhiều User Threads được ánh xạ vào một số lượng Kernel Threads tùy chỉnh.
+		- Ưu điểm: Linh hoạt, có thể tận dụng được đa nhân nhiệm.
+		- Nhược điểm: Phức tạp trong việc quản lý và triển khai, đôi khi cần sự đồng bộ hóa.
+
+------------------------CHƯƠNG 4: Các thuật toán lập lịch CPU (CPU Scheduling) ---------------------------------
+1. Khái niệm và mục đích:
+- CPU scheduling (lập lịch CPU) là một quá trình chọn lựa một tiến trình để cấp CPU, trong số rất nhiều tiến trình đang đợi (trạng thái Ready).
+- Mục tiêu của lập lịch CPU nhằm đảo bảo hệ thống hoạt động hiệu quả, công bằng, tối ưu hóa việc sử dụng tài nguyên CPU.
+
+2. Phân biệt Preemptive or Non preemptive.
+- Lập lịch Non-Preemptive: một khi CPU đã được cấp phát cho một tiến trình, tiến trình sẽ được phép sử dụng CPU cho tới khi nó không cần nữa.
+- Lập lịch Preemptive: dù CPU đã được cấp phát cho một tiến trình, nó có thể bị bộ lập lịch thu hồi bất kỳ lúc nào, dựa trên các tiêu chí tùy vào thuộc vào các thuật toán sử dụng.
+
+3. Các thuật toán lập lịch CPU
+-> Tự xem các slide bài giảng và slide ôn tập mà giảng viên đã gửi.
+
+------------------------CHƯƠNG 5: Đồng bộ tiến trình (Process Synchronization) ---------------------------------
+
+1. Khái niệm về Critical Resource (Tài nguyên găng) và Critical Section (Đoạn găng)
+- Tài nguyên găng là loại tài nguyên mà mỗi lúc chỉ được 1 tiến trình truy cập và có thể xảy ra tranh chấp giữa nhiều tiến trình khác.
+- Đoạn chương trình có chứa khả năng xảy ra mâu thuẫn truy xuất tài nguyên dùng chung gọi là critical section (miền găng)
+
+2. Tại sao phải đồng bộ tiến trình
+	- Tránh Race Conditions (Tình trạng đua): Race conditions xảy ra khi hai hoặc nhiều tiến trình cùng truy cập và thay đổi dữ liệu chung cùng một lúc. Điều này có thể dẫn đến kết quả không đoán trước được và không đồng bộ.
+	- Tránh Deadlocks (Kẹt): Deadlocks là tình trạng mà các tiến trình đều đang chờ đợi nguồn tài nguyên mà một tiến trình khác đang giữ, tạo ra một vòng lặp chờ đợi và không thể tiếp tục.
+	- Bảo vệ Dữ liệu chia sẻ: Khi nhiều tiến trình cùng truy cập dữ liệu chia sẻ, đồng bộ hóa giúp đảm bảo rằng một tiến trình sẽ không đọc hoặc ghi vào dữ liệu khi nó đang được tiến trình khác thay đổi.
+	- Bảo vệ Cấu trúc Dữ liệu: Trong trường hợp cần truy cập cấu trúc dữ liệu phức tạp, đồng bộ hóa giúp đảm bảo rằng dữ liệu không bị xâm phạm khi các tiến trình cùng truy cập.
+	- Đảm bảo Thứ tự Thực hiện: Đồng bộ hóa đảm bảo rằng các hoạt động của các tiến trình xảy ra theo thứ tự mong muốn, giúp duy trì tính nhất quán của hệ thống.
+	- Optimization (Tối ưu hóa): Đồng bộ hóa cũng có thể được sử dụng để tối ưu hóa hiệu suất và sử dụng tài nguyên một cách hiệu quả hơn.
+
+3. So sánh 2 giải pháp Busy-waiting và Sleep & WAkeup
+
+- Busy-waiting (Chờ bận rộn):
+
+	+ Khái niệm: Luồng chờ (thread) không ngừng kiểm tra điều kiện cho đến khi điều kiện đó trở thành đúng. (KHông cần OS hỗ trợ)
+	+ Ưu điểm:
+		Thực hiện ngay khi điều kiện đúng.
+		Đơn giản và dễ triển khai.
+	+ Nhược điểm:
+		Lãng phí tài nguyên CPU do luồng liên tục kiểm tra điều kiện.
+		Không hiệu quả khi thời gian chờ lâu.
+
+- Sleep & Wakeup (Ngủ và Thức Tỉnh):
+	+ Khái niệm: Luồng chờ (thread) bị đưa vào chế độ ngủ và sẽ được thức tỉnh khi điều kiện trở thành đúng. (Cần OS hỗ trợ)
+	+ Ưu điểm:
+		Tiết kiệm tài nguyên CPU vì luồng không cần liên tục kiểm tra điều kiện.
+		Hiệu quả khi thời gian chờ lâu.
+	+ Nhược điểm:
+		Đòi hỏi thêm các cơ chế hỗ trợ như các tác vụ quản lý thời gian (timer).
+		Tăng độ phức tạp của quá trình lập trình và quản lý.
+
+------------------------CHƯƠNG 6: Deadlock ---------------------------------
+
+1. Deadlock là gì ? Nguyên nhân xuất hiện ?
+- Khái niệm: Deadlock là hiện tượng trong hệ thống xuất hiện một tập các P mà mỗi P trong tập hợp đều chờ đợi được cấp phát tài nguyên, nhưng tài nguyên đó đang bị một P khác trong tập này chiếm giữ.
+
+- Nguyên nhân:
+	+ Các P tranh chấp nhau tài nguyên không chia sẻ được -> Do các giải pháp khóa tài nguyên (mutex, semaphore, monitor).
+	+ Các P không được cấp phát đủ tài nguyên -> block -> không trả lại tài nguyên đang giữ.
+	+ Càng nhiều P bị block à càng nhiều tài nguyên bị giữ -> deadlock càng nghiêm trọng.
+
+2. Điều kiện xuất hiện deadlock ?
+- Coffman, Elphick và Shoshani đã đưa ra 4 điều kiện cần có làm xuất hiện tắc nghẽn:
+	1. Mutual exclusion: Có sử dụng tài nguyên không thể chia sẻ (Mutual exclusion), gọi là tài nguyên găng (critical resource)
+	2. Hold & wait: Sự chiếm giữ và yêu cầu thêm tài nguyên.
+	3. No preemption: Không thu hồi tài nguyên từ tiến trình đang giữ chúng.
+	4. Circularwait: Tồn tại một chu trình trong đồ thị cấp phát tài nguyên.
+-> Phải đáp ứng đủ 4 điều kiện trên mới xảy ra ra deadlock.
+
+3. Các phương pháp xử lý deadlock
+- Ngăn ngừa: tác dụng vào 1 trong 4 điều kiện cần của deadlock để nó không xảy ra.
+- Phòng tránh: 
+	- Phòng tránh deadlock (Deadlock Avoidance) đòi hỏi OS có trước thông tin bổ sung liên quan đến R mà một P sẽ yêu cầu và sử dụng trong suốt quá trình thực thi.
+	- Yêu cầu mỗi P khai báo số lượng tối đa mỗi loại tài nguyên mà nó cần. Quyết định cấp phát R cho P được thực hiện hay không phụ thuộc vào việc cấp phát đó có nguy cơ dẫn đến tắc nghẽn không.
+	- Giải thuật tránh tắc nghẽn sẽ kiểm tra trạng thái cấp phát tài nguyên (resource – allocation state) để bảo đảm hệ thống không rơi vào deadlock. Tuân thủ 2 nguyên tắc:
+  		+ Không cho P bắt đầu hoạt động nếu yêu cầu R của nó có nguy cơ dẫn đến deadlock.
+  		+ Không được cung cấp thêm R cho P nếu sự cung cấp này có nguy cơ dẫn đến deadlock.
+- Nhận biết: Giải thuật nhà bank
+
+------------------------CHƯƠNG 7: Memory management (Quản lý bộ nhớ) ---------------------------------
+
+1. Các khái niệm:
+- Bộ nhớ:
+  + Là nơi lưu trữ dữ liệu và chương trình trong máy tính.
+  + Phân chia thành bộ nhớ chính (RAM) và bộ nhớ thứ cấp (đĩa cứng, ổ đĩa SSD).
+
+- Địa chỉ Vật lý (Physical Address)
+  + Là địa chỉ thực sự trên thanh ghi địa chỉ của bộ nhớ vật lý.
+  + Dùng để xác định vị trí vật lý của một ô nhớ cụ thể.
+
+- Địa chỉ Logic (Logical Address):
+  + Là địa chỉ được sử dụng bởi chương trình và CPU để truy cập bộ nhớ.
+  + Các địa chỉ logic được chuyển đổi thành địa chỉ vật lý thông qua bảng trang (paging) trong trường hợp của hệ điều hành sử dụng phương pháp trang.
+
+- Không gian Nhớ Logic (Logical Memory Space):
+  + Là tổng hợp của tất cả các địa chỉ logic mà một chương trình có thể sử dụng.
+  + Được xác định bởi chiều rộng của địa chỉ logic, thường là 32-bit hoặc 64-bit, tùy thuộc vào kiến trúc hệ thống.
+
+- Không gian Nhớ Vật lý (Physical Memory Space):
+  + Là tổng hợp của tất cả các ô nhớ vật lý có sẵn trong hệ thống.
+  + Mỗi ô nhớ vật lý có một địa chỉ vật lý riêng biệt.
+
+2. Các thời điểm chuyển đổi địa chỉ
+- Quá trình chuyển đổi địa chỉ có thể xảy ra ở 3 giai đoạn: biên dịch (compile time), nạp (load time), thực thi (execution time).
+	
+
+3. Cấp phát bộ nhớ liên tục:
+
+- Ý tưởng:  cung cấp một vùng liên tục của bộ nhớ cho một chương trình.
+- Ký thuật:
+	+ Single contiguous allocation: Bộ nhớ chính được chia thành 2 phân vùng: vùng bộ nhớ thấp để chứa OS, vùng bộ nhớ cao chứa các tiến trình.
+		-> Như vậy chỉ có 2 đối tượng trên bộ nhớ chính: OS và 1 tiến trình người dùng à lãng phí bộ nhớ chính và thời gian CPU.
+	+ Partitioned allocation (Multiple partitioning): chia bộ nhớ chính thành nhiều phần và nạp nhiều tiến trình vào bộ nhớ chính cùng lúc. 
+		-> Gồm 2 loại 
+		++ Fixed partitioning: chia bộ nhớ chính thành nhiều phân vùng có kích thước bằng nhau hoặc khác nhau. Mỗi tiến trình được nạp vào 1 phân vùng.
+		++ Dynamic partitioning: chia bộ nhớ thành nhiều phân vùng, kích thước mỗi phân vùng phụ thuộc vào tiến trình được nạp vào.
+
+- Các vấn đề: Vấn đề phân mảnh bộ nhớ (fragmentation): không gian bộ nhớ bị phân thành nhiều “lỗ trống” (gọi là hole) không liên tục, bao gồm:
+	+ Phân mảnh nội (internal fragmentation): vùng nhớ được cấp phát lớn hơn vùng nhớ yêu cầu.
+	+ Phân mảnh ngoại (external fragmentation): vùng nhớ còn trống đủ lớn để cấp phát cho tiến trình, nhưng lại không liên tục.
+
+4. Cấp phát bộ nhớ không liên tục
+
+- Ý tưởng: chương trình được chia thành các khối khác nhau (gọi là pages/fragment) và nạp vào những phần khác nhau của bộ nhớ chính (gọi là frame/segment) , không nhất thiết phải liền kề nhau.
+- Gồm một số loại:
+  + Phân trang (paging).
+  + Phân đoạn (segmentation).
+  + Phân trang kết hợp phân đoạn (segmentation with paging)
+	-> Cụ thể hãy xem các thuật toán phân trang, phân đoạn mà giảng viên đã hướng dẫn.
+
+------------------------CHƯƠNG 8: Memory management (Quản lý bộ nhớ) ---------------------------------
+
+1. Bộ nhớ ảo là gì ? Mục đích ?
+- Bộ nhớ ảo (virtual memory) là một kỹ thuật quản lý bộ nhớ, trong đó bộ nhớ phụ có thể được sử dụng như thể nó là một phần của bộ nhớ chính.
+- Mục đích: Bộ nhớ ảo là một kỹ thuật cho phép một không gian địa chỉ logic lớn có thể ánh xạ vào một bộ nhớ vật lý nhỏ hơn.
+
+2. Các kỹ thuật bộ nhớ ảo
+- Demand paging (phân trang theo yêu cầu): phổ biến vì tính đơn giản, hiệu suất tốt và tính linh hoạt khi quản lý bộ nhớ.
+	-> Xem kỹ btap thay thế trang. Các giải thuật thay thế trang FIFO Optimal LRU
+- Demand segmentation (phân đoạn theo yêu cầu): không phổ biến bởi
+	+ Phức tạp vì chia chương trình thành các đoạn (segment) có kích thước khác nhau.
+	+ Hiệu suất bị ảnh hưởng vì phải nạp cả đoạn đôi khi chứa dữ liệu không cần thiết.
+	+ Ít linh hoạt do gặp khó khăn khi thay đổi thích thước các đoạn.
+
+
+------------------------CHƯƠNG 9: Mass Storage (Cấu trúc lưu trữ) ---------------------------------
+- Bộ nhớ thứ cấp gồm 2 loại phổ biến: 
+	+ Ổ đĩa cứng (HDD – Hard disk drive)  
+	+ Bộ nhớ bất biến (NVM – Nonvolatile).
+	-> Chi tiết đọc thêm trong tài liệu của giảng viên
+
+- Các giải thuật đọc đĩa -> Chi tiết trong tài liệu của giảng viên.

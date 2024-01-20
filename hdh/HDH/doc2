@@ -1,0 +1,32 @@
+***tiến trình: là 1 chương trình đang được thực thi
+lưu đồ trạng thái của 1 tiến trình:
+new -> ready -> running -> waiting -> terminate(exit() process)
+
+***PCB(process control block):Khối điều khiển tiến trình
+
+***tiến trình đơn luồng và tiến trình đa luồng
+
+***điều phối tiến trình: phải có hàng đợi cho các tiến trình
+		-> xử lý cpu : tính toán và nhập xuất I/O
+		-> khai thác hàng đợi để điều phối tiến trình
+		   khiến cho CPU xử lý hiệu quả hơn
+		*các hàng đợi: JQ,RQ,DQ
+		-> các tiến trình sẽ di chuyển giữa các hàng 
+		đợi
+		*có 2 loại điều phối:1.điều phối công việc
+				 2.điều phối CPU
+		 swapping tiến trình: đưa tiến trình ra khỏi bộ nhớ sau đó đưa tiến trình vào lại để tiếp tục thực hiện
+		 
+***tạo tiến trình: tiến trình cha và tiến trình con chạy đồng thời nhưng nguyên tắc là tiến trình cha phải đợi tiến trình con chạy xong mới kết thúc chương trình 
+		*tiến trình cha kết thúc trước -> tiến trình mồ côi(orphant)
+		->giải pháp: hệ thống ép tiến trình con với 1 tiến trình khác cbi kết thúc và kết thúc tiến trình con
+		*tiến trình zombie: tiến trình con kết thúc trước và tiến trình đợi tiến trình con
+		->giải pháp:dùng lệnh kill ép tắt tiến trình cha
+		
+		
+***tiến trình hợp tác: 1.tiến trình tuần tự
+		   2.tiến trình song song
+		  ->truyền thông tin cho nhau và đồng bộ hóa vdu bài toán (producer-consumer)
+		  		   
+		   
+

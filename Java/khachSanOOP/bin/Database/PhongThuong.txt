@@ -1,0 +1,5 @@
+P2;100.000;Quat dien;tour tham quan;7
+P3;100.000;Quat dien;massage;5
+P4;100.000;Quat dien;tour tham quan;6
+P5;100.000;Quat dien;massage;3
+P1;155.000;Tivi;massage;6

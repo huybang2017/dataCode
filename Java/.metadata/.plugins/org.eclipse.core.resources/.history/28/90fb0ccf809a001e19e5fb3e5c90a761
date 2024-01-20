@@ -1,0 +1,117 @@
+package HandleList;
+
+import AbstractCore.TypeList;
+import handleMaganement.ObjCustomer.Customer;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ListCustomer implements TypeList {
+	private ArrayList<Customer> listCustomer; // Thay đổi kiểu dữ liệu của mảng
+	private static final String FILE_PATH = "/home/huy/Documents/Java/projectOOP/src/data/KhachHang.txt";
+
+	public ListCustomer() {
+		// Initialize the ArrayList
+		listCustomer = new ArrayList<>();
+	}
+
+    @Override
+    public void add() {
+        // Create a new customer
+        Customer newCustomer = new Customer();
+        // Set the customer's data (you may use Scanner or other means to get input)
+        newCustomer.InfoCustomer();
+
+        // Add the new customer to the list
+        listCustomer.add(newCustomer);
+
+        // Add the new customer to the file
+        addCustomerToFile(newCustomer);
+    }
+
+	@Override
+	public void edit() {
+		// Placeholder for editing a customer in the list
+	}
+
+	@Override
+	public void remove() {
+		// Placeholder for removing a customer from the list
+	}
+
+	@Override
+	public void find() {
+		// Placeholder for finding a customer in the list
+	}
+
+	@Override
+	public void display() {
+		// Placeholder for displaying the list of customers
+		for (Customer customer : listCustomer) {
+			customer.printInfo();
+		}
+	}
+
+
+	private ArrayList<String> readDataFromFile(String filePath) throws IOException {
+		ArrayList<String> data = new ArrayList<>();
+		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath, StandardCharsets.UTF_8))) {
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				data.add(line);
+			}
+		}
+		return data;
+	}
+
+
+
+	public void readListCustomer() {
+		try {
+			ArrayList<String> data = readDataFromFile(FILE_PATH);
+			listCustomer.clear(); // Xóa dữ liệu hiện tại của list
+			for (String line : data) {
+				Customer customer = new Customer();
+				customer.getLineFromFile(line);
+				listCustomer.add(customer); // Thêm từng khách hàng vào ArrayList
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+    private void addCustomerToFile(Customer customer) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
+            // Append the new customer data to the file
+            bufferedWriter.write(customer.getDataForFile());
+            bufferedWriter.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+	public static void main(String[] args) {
+		ListCustomer customerList = new ListCustomer();
+
+		// Read customer data from file
+		customerList.readListCustomer();
+
+		// Display the updated customer list
+		customerList.display();
+		
+		customerList.add();
+
+		// Add a new customer to the list
+
+		// Edit, remove, find, etc. (implement these methods as needed)
+		// customerList.edit();
+		// customerList.remove();
+		// customerList.find();
+	}
+}

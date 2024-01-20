@@ -1,0 +1,191 @@
+package HandleList;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import handleMaganement.ObjOrder.SanPham;
+
+public class ListProduct {
+    private ArrayList<SanPham> sanpham = new ArrayList<SanPham>();
+    private Stream stream = new Stream();
+
+    public ListProduct() {
+        initializeProducts();
+    }
+
+    private void initializeProducts() {
+        try {
+            String filePath = "/Users/m1lt43/Desktop/HuyUupdate/src/data/SanPham.txt";
+            ArrayList<String> lines = stream.read(filePath);
+
+            for (String line : lines) {
+                String[] productData = line.split(",");
+                if (productData.length >= 9) {
+                    // Tạo đối tượng SanPham từ dữ liệu và thêm vào danh sách sanpham
+                    SanPham sanPhamData = new SanPham();
+                    sanPhamData.setMaSanPham(productData[0].trim());
+                    sanPhamData.setTenSanPham(productData[1].trim());
+                    sanPhamData.setLoai(productData[2].trim());
+                    sanPhamData.setGia(Integer.parseInt(productData[3].trim()));
+                    sanPhamData.setCoDa(Boolean.parseBoolean(productData[4].trim()));
+                    sanPhamData.setMoTaDa(productData[5].trim());
+                    sanPhamData.setCoSize(Boolean.parseBoolean(productData[6].trim()));
+                    sanPhamData.setSize(productData[7].trim());
+                    sanPhamData.setGhiChu(productData[8].trim());
+
+                    sanpham.add(sanPhamData);
+                } else {
+                    System.out.println("Invalid data format: " + line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<SanPham> getProductList() {
+        return sanpham;
+    }
+
+    // tạo sản phẩm
+    // Thêm sản phẩm vào danh sách và ghi vào tệp
+    public void addProduct(SanPham sanPham) {
+        sanpham.add(sanPham);
+        writeToFile(sanPham); // Ghi thông tin sản phẩm vào tệp
+    }
+
+    // Ghi dữ liệu sản phẩm vào tệp
+    private void writeToFile(SanPham sanPham) {
+        try (BufferedWriter bw = new BufferedWriter(
+                new FileWriter("/Users/m1lt43/Desktop/HuyUupdate/src/data/SanPham.txt", true))) {
+            // Ghi thông tin sản phẩm vào tệp
+            bw.write(sanPham.getMaSanPham() + ",");
+            bw.write(sanPham.getTenSanPham() + ",");
+            bw.write(sanPham.getLoai() + ",");
+            bw.write(sanPham.getGia() + ",");
+            bw.write(sanPham.isCoDa() + ",");
+            bw.write(sanPham.getMoTaDa() + ",");
+            bw.write(sanPham.isCoSize() + ",");
+            bw.write(sanPham.getSize() + ",");
+            bw.write(sanPham.getGhiChu());
+            bw.newLine(); // Xuống dòng cho sản phẩm tiếp theo
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // xóa sản phẩm
+    public void removeProduct(String maSanPham) {
+        // Tìm sản phẩm theo mã
+        SanPham productToRemove = null;
+        for (SanPham sanPham : sanpham) {
+            if (sanPham.getMaSanPham().equals(maSanPham)) {
+                productToRemove = sanPham;
+                break;
+            }
+        }
+
+        // Nếu tìm thấy sản phẩm, xóa khỏi danh sách và cập nhật tệp
+        if (productToRemove != null) {
+            sanpham.remove(productToRemove);
+            updateFile();
+        } else {
+            System.out.println("Không tìm thấy sản phẩm có mã: " + maSanPham);
+        }
+    }
+
+    // Cập nhật tệp sau khi xóa sản phẩm
+    private void updateFile() {
+        try (BufferedWriter bw = new BufferedWriter(
+                new FileWriter("//Users/m1lt43/Desktop/HuyUupdate/src/data/SanPham.txt"))) {
+            for (SanPham sanPham : sanpham) {
+                // Ghi thông tin sản phẩm vào tệp
+                bw.write(sanPham.getMaSanPham() + ",");
+                bw.write(sanPham.getTenSanPham() + ",");
+                bw.write(sanPham.getLoai() + ",");
+                bw.write(sanPham.getGia() + ",");
+                bw.write(sanPham.isCoDa() + ",");
+                bw.write(sanPham.getMoTaDa() + ",");
+                bw.write(sanPham.isCoSize() + ",");
+                bw.write(sanPham.getSize() + ",");
+                bw.write(sanPham.getGhiChu());
+                bw.newLine(); // Xuống dòng cho sản phẩm tiếp theo
+            }
+            System.out.println("Sản phẩm đã được xóa và tệp đã được cập nhật.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // lấy data sản phẩm / mã sản phảm
+    public SanPham findProductById(String maSanPham) {
+        for (SanPham sanPham : sanpham) {
+            if (sanPham.getMaSanPham().equals(maSanPham)) {
+                return sanPham;
+            }
+        }
+        System.out.println("Không tìm thấy sản phẩm có mã: " + maSanPham);
+        return null;
+    }
+
+    // cập nhật sản phẩm
+    public void updateProduct(String maSanPham) {
+        // Tìm sản phẩm theo mã
+        SanPham productToUpdate = null;
+        for (SanPham sanPham : sanpham) {
+            if (sanPham.getMaSanPham().equals(maSanPham)) {
+                productToUpdate = sanPham;
+                break;
+            }
+        }
+
+        // Nếu tìm thấy sản phẩm, hiển thị thông tin và cập nhật
+        if (productToUpdate != null) {
+            System.out.println("Thông tin sản phẩm cần sửa:");
+            System.out.println(productToUpdate);
+
+            // Nhập thông tin mới từ người dùng
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Nhập tên sản phẩm mới: ");
+            String tenSanPham = scanner.nextLine();
+            System.out.print("Nhập loại sản phẩm mới: ");
+            String loai = scanner.nextLine();
+            System.out.print("Nhập giá sản phẩm mới: ");
+            int gia = scanner.nextInt();
+            scanner.nextLine(); // Đọc dòng trống
+            System.out.print("Có đá hay không (true/false): ");
+            boolean coDa = scanner.nextBoolean();
+            scanner.nextLine(); // Đọc dòng trống
+            System.out.print("Mô tả đá mới: ");
+            String moTaDa = scanner.nextLine();
+            System.out.print("Có size hay không (true/false): ");
+            boolean coSize = scanner.nextBoolean();
+            scanner.nextLine(); // Đọc dòng trống
+            System.out.print("Nhập size mới: ");
+            String size = scanner.nextLine();
+            System.out.print("Ghi chú mới: ");
+            String ghiChu = scanner.nextLine();
+
+            // Cập nhật thông tin sản phẩm
+            productToUpdate.setTenSanPham(tenSanPham);
+            productToUpdate.setLoai(loai);
+            productToUpdate.setGia(gia);
+            productToUpdate.setCoDa(coDa);
+            productToUpdate.setMoTaDa(moTaDa);
+            productToUpdate.setCoSize(coSize);
+            productToUpdate.setSize(size);
+            productToUpdate.setGhiChu(ghiChu);
+
+            // Ghi lại toàn bộ danh sách vào tệp
+            updateFile();
+
+            System.out.println("Sản phẩm đã được cập nhật và tệp đã được cập nhật.");
+        } else {
+            System.out.println("Không tìm thấy sản phẩm có mã: " + maSanPham);
+        }
+    }
+
+}

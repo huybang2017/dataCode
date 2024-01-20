@@ -1,0 +1,81 @@
+// Lớp Person
+class Person {
+  constructor(name, address, id, email) {
+    this.name = name;
+    this.address = address;
+    this.id = id;
+    this.email = email;
+  }
+}
+
+// Lớp Student kế thừa từ lớp Person
+class Student extends Person {
+  constructor(name, address, id, email, math, physics, chemistry) {
+    super(name, address, id, email);
+    this.math = math;
+    this.physics = physics;
+    this.chemistry = chemistry;
+  }
+
+  // tính điểm trung bình
+  calculateAvgScore() {
+    return (this.math + this.physics + this.chemistry) / 3;
+  }
+}
+
+// Lớp Employee kế thừa từ lớp Person
+class Employee extends Person {
+  constructor(name, address, id, email, workDays, dailySalary) {
+    super(name, address, id, email);
+    this.workDays = workDays;
+    this.dailySalary = dailySalary;
+  }
+
+  // tính lương
+  calculateSalary() {
+    return this.workDays * this.dailySalary;
+  }
+}
+
+// Lớp Customer kế thừa từ lớp Person
+class Customer extends Person {
+  constructor(name, address, id, email, companyName, orderValue, rating) {
+    super(name, address, id, email);
+    this.companyName = companyName;
+    this.orderValue = orderValue;
+    this.rating = rating;
+  }
+}
+
+// Lớp ListPerson quản lý danh sách các đối tượng
+class ListPerson {
+  constructor() {
+    this.personList = [];
+  }
+
+  // thêm đối tượng vào danh sách
+  addPerson(person) {
+    this.personList.push(person);
+  }
+
+  // xóa đối tượng khỏi danh sách theo mã
+  deletePersonById(id) {
+    this.personList = this.personList.filter((person) => person.id !== id);
+  }
+
+  // cập nhật thông tin đối tượng
+  updatePersonById(id, updatedPerson) {
+    const index = this.personList.findIndex((person) => person.id === id);
+    this.personList[index] = updatedPerson;
+  }
+
+  // sắp xếp danh sách theo thứ tự họ tên
+  sortListByName() {
+    this.personList.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  // lọc danh sách theo loại người dùng
+  filterListByType(type) {
+    return this.personList.filter((person) => person instanceof type);
+  }
+}

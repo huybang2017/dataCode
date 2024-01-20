@@ -1,0 +1,35 @@
+class ListPerson {
+  constructor() {
+    this.persons = [];
+  }
+
+  addPerson(person) {
+    if (!person instanceof Person) {
+      throw new Error("Invalid person object");
+    }
+    this.persons.push(person);
+  }
+
+  removePersonById(id) {
+    this.persons = this.persons.filter(person => person.id !== id);
+  }
+
+  updatePersonById(id, updatedPerson) {
+    const index = this.persons.findIndex(person => person.id === id);
+    if (index === -1) {
+      throw new Error("Person not found");
+    }
+    if (!updatedPerson instanceof Person) {
+      throw new Error("Invalid person object");
+    }
+    this.persons.splice(index, 1, updatedPerson);
+  }
+
+  sortByName() {
+    this.persons.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  filterByType(type) {
+    return this.persons.filter(person => person.constructor.name.toLowerCase() === type.toLowerCase());
+  }
+}

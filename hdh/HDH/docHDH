@@ -1,0 +1,46 @@
+***tài nguyên 
+	phần cứng
+	phần mềm
+	cách quản lí tài nguyên sao cho hợp lý
+
+***process(tiến trình)
+	1 process có thể sinh ra 1 process khác chạy song song 		và độc lập nhưng tùy theo cách xử lí của 1 dev
+
+
+***sheduler(trình lập lịch) -> sắp xếp các tiến trình sao cho hợp lý
+	cpu luân phiên xử lí săp xếp các tiến trình sao cho tối ưu
+	có nhiều kĩ thuật lập lịch (các thuật toán lập lịch của cpu cpu sheduler)
+	
+
+***-> trình trạng race :khi 2 tiến trình cùng truy xuất tài nguyên dùng chung sẽ gặp tình trạng ghi đè dữ liệu
+giải pháp -> critical session không cho chạy đồng thời thời mà phỉa theo tuần tự hóa việc truy cập dữ liệu
+	-> sẽ ảnh hưởng đến thời gian xử lí nhưng không ảnh hưởng nhiều vì cs hiếm và ngắn
+	
+
+***deadlock: vd: P1 P2 cùng chạy dùng chung tài nguyên P1 dừng chạy vì cần tài nguyên P2 và P2 cũng dừng vì chờ tài nguyên P1 nên cả chờ lẫn nhau và bị treo process
+->giải pháp : *1:dò lỗi trước(dev)
+	    *2:nếu đã bị dính dealock -> ép 1 process trả tài nguyên
+	    
+	    
+***memory management (đơn chương) và (đa chương):
+	*đa chương:
+	-> vấn đề (tĩnh): các dữ liệu xếp hàng chờ nhau do sự phân vùng bộ nhớ(tĩnh)
+	         : khi tối ưu rồi nma vẫn sẽ không hoạt động nếu gặp dữ liệu lớn hơn vùng trong bộ nhớ
+         -> vấn đề (động): giải quyết được hết vấn đề và OS hiện nay đều dùng
+         		       swapping chuyển đổi dữ liệu qua các vùng nhớ do sự chiếm dụng bộ nhớ của dữ liệu
+         		       
+***memory ảo:-> 3 kiểu:
+
+***file system: cylinder,head,sector
+***đường dẫn: tương đối và tuyệt đối
+
+***giao tiếp với bên ngoài: card I/O có đều có driver riêng để 
+kết nối các thiết bị
+
+***an ninh hệ thống: *tính bảo mật
+		 *tính toàn vẹn
+		 *tính sẵn sàng sử dụng
+		 
+ 
+***system call: user action -> system call -> hardware -> xử lý
+***system service

@@ -1,0 +1,5 @@
+Mã bàn B1 ;Bàn 1;Số bàn 1;Số ghế 2
+Mã bàn B2 ;Bàn 2;Số bàn 2;Số ghế 4
+Mã bàn B3 ;Bàn 3;Số bàn 3;Số ghế 8
+Mã bàn B4 ;Bàn 4;Số bàn 4;Số ghế 2
+Mã bàn B5 ;Bàn 5;Số bàn 5;Số ghế 4

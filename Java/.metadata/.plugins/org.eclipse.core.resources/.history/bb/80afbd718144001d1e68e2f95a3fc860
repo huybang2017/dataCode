@@ -1,0 +1,14 @@
+package vong_lap;
+
+public class du_an_tinh_toan {
+
+	public du_an_tinh_toan() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

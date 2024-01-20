@@ -1,0 +1,15 @@
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\bin\Debug\net6.0\Bai03.exe
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\bin\Debug\net6.0\Bai03.deps.json
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\bin\Debug\net6.0\Bai03.runtimeconfig.json
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\bin\Debug\net6.0\Bai03.dll
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\bin\Debug\net6.0\Bai03.pdb
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\Bai03.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\Bai03.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\Bai03.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\Bai03.AssemblyInfo.cs
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\Bai03.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\Bai03.dll
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\refint\Bai03.dll
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\Bai03.pdb
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\Bai03.genruntimeconfig.cache
+C:\Users\Admin\Documents\Visual Studio 2022\Bai03\Bai03\obj\Debug\net6.0\ref\Bai03.dll

@@ -1,0 +1,24 @@
+# Bàn 1
+Table Number: 1
+Number of Seats: 2
+occupied: true
+
+# Bàn 2
+Table Number: 2
+Number of Seats: 4
+occupied: false
+
+# Bàn 3
+Table Number: 3
+Number of Seats: 8
+occupied: false
+
+# Bàn 4
+Table Number: 4
+Number of Seats: 2
+occupied: false
+
+# Bàn 5
+Table Number: 5
+Number of Seats: 4
+occupied: false

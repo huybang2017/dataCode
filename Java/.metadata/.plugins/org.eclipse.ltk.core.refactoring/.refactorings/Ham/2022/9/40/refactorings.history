@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;bai_tap&apos; to &apos;quan_li_tuyen_sinh&apos;&#x0D;&#x0A;- Original project: &apos;Ham&apos;&#x0D;&#x0A;- Original element: &apos;bai_tap&apos;&#x0D;&#x0A;- Renamed element: &apos;quan_li_tuyen_sinh&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;bai_tap&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{bai_tap.java[bai_tap" matchStrategy="1" name="quan_li_tuyen_sinh" qualified="false" references="true" similarDeclarations="false" stamp="1664087000922" textual="false" version="1.0"/>
+</session>

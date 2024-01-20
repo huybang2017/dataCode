@@ -1,0 +1,4 @@
+LT1;Nguyen Van A;21;Nam;13/20 Pham Ngoc Thach;NVA@gmail.com;093890944;ca toi;43
+LT2;Nguyen Van b;22;Nam;123/12 Lang Chai;duongtank@gmail.com;092847382;ca sang;12
+LT3;Nguyen Van c;22;Nu;Indonesia;ngoKHi@gmail.com;092847382;ca sang;45
+LT4;Nguyen Van f;22;Nu;625 Chao Lua;ngotinh@gmail.com;092847382;ca sang;32

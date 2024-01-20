@@ -1,0 +1,57 @@
+		CPU SHEDULING
+I/khái niệm
+	tại 1 thời điểm cpu chỉ thực hiện 1 tiến trình
+	
+	Chu kỳ cpu I/O
+		CPU burst
+		I/O burst
+		CPU-bound -> dùng nhiều thời gian hơn
+		I/O-bound -> dùng nhiều thời gian hơn
+		non-preemptive: thực hiện -> chờ đợi (yêu cầu vào ra)
+	preemtive: thực hiện -> sẵn sàng (hết time CPU)
+	preemtive: chờ đợi -> sẵn sàng (hoàn thành vào ra)
+	*điều phối không trưng dụng (chạy cho hêt tiến trình)
+	-> vấn đề gặp trường hợp chờ lâu mà không đc xử lý
+	*điều phối trưng dụng (có thể dừng để cho xử lý process độ ưu tiên cao hơn)
+	->vấn đề về dùng chùng tài nguyên
+	
+	*điều phối dài hạn -> CPU tối ưu nhưng process phân chia thời gian sử dụng
+	*điều phối trung hạn -> đièu phối dài hạn chấp nhận việc xử lý process mà khi sử dụng tài nguyên vượt quá bộ nhớ chính(sử dụng bộ nhớ ảo)
+	*điều phối ngắn hạn
+II/tiêu chuẩn điều phối
+	*sử dụng cpu
+	*thông lượng: số lượng process complete on the time
+	*thời gian hoàn thành(TAT turnaround time): tổng tất cả các thời gian
+	*thời gian chờ đợi(waiting time WT): thời gian hoàn thành - thời gian thực hiện
+	* thời gian đáp ứng(respone time(rt)):thời gian lần đâu cấp lên đến thời gian được cpu cấp phát
+	
+	*có 5 tiêu chuẩn:
+		các giải thuật gồm:FCFS,...
+	*hàm lựa chọn: 
+		w: tổng thời gian đợi
+		e: thời gian được phục vụ
+		s: tổng thời gian
+	*chế độ quyết đinh: none-preemtive và preemtive
+III/các thuật toán điều phối CPU
+	*FCFS: 
+	      -> nguyên tắc: tiến trình nào vào trước thì xử lý trước
+ 	      -> none preemtive: chạy 1 mạch không chờ gì hết
+ 	      burst time: thời gian thực hiện
+ 	      arrival: thời gian vào
+ 	      cpu burst: thời gian cpu sử dụng
+ 	      I/O burst: thời gian I/O sử dụng
+	      -> vấn đề: time lâu
+	*SJF(SRTF):
+	      -> nguyên tắc: tiến trình nào có thời gian thực hiện ngắn nhất sử dụng trước
+	      -> vấn đề: đói CPU
+	      -> xét cpu burst và canh thời gian vào
+          *SRTF(SJF non preemtive):
+          	->ưu tiên thời gian nhưng mà khong như SJF là chạy hết process1 mà là xét time thực hiện liên tục ****
+	*Round Robin:
+		-> nguyên tắc: mỗi tiến trình sẽ được cấp time q khi sử dụng nếu thời gian xử lý cpu nhỏ hơn q thì chạy xong nghỉ còn nếu ngược lại sẽ bị chuyển sang bên ngoài nói nôm 
+na là mỗi tiến trình chỉ được chạy trong 1 time nhất định
+		->nếu quantum quá lớn thì mặc định thành FCFS
+		-> để ý thời gian vào khi xét CPU-pound
+		
+IV/điều phối xử lý
+

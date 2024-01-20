@@ -1,0 +1,15 @@
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\bin\Debug\net7.0\bai4.exe
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\bin\Debug\net7.0\bai4.deps.json
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\bin\Debug\net7.0\bai4.runtimeconfig.json
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\bin\Debug\net7.0\bai4.dll
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\bin\Debug\net7.0\bai4.pdb
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\bai4.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\bai4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\bai4.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\bai4.AssemblyInfo.cs
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\bai4.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\bai4.dll
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\refint\bai4.dll
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\bai4.pdb
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\bai4.genruntimeconfig.cache
+C:\Users\Admin\Documents\Visual Studio 2022\bai4\bai4\obj\Debug\net7.0\ref\bai4.dll

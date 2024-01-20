@@ -1,0 +1,5 @@
+
+Mã sản phẩm: SP01, Ten san pham: Cà phê sữa đá, Đá: Có, Size: Nhỏ, Ghi chú: ko cos, Ngày đặt hàng: 2023-12-19
+Mã sản phẩm: SP01, Ten san pham: Cà phê sữa đá, Đá: Không, Size: Nhỏ, Ghi chú: 1, Ngày đặt hàng: 2023-12-19
+Mã sản phẩm: SP02, Ten san pham: Trà đào, Đá: Không, Size: Nhỏ, Ghi chú: không, Ngày đặt hàng: 2023-12-19
+Mã sản phẩm: SP04, Ten san pham: Bạc xỉu, Đá: Không, Size: Nhỏ, Ghi chú: nhiều đường, Ngày đặt hàng: 2023-12-19

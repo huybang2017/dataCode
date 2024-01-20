@@ -1,0 +1,108 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Hind", sans-serif;
+}
+
+/* HEADER */
+header {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+}
+
+#navBar .nav-link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #35a22c;
+    display: block;
+    transition: all 0.4s;
+}
+
+#navBar .nav-link:hover::after {
+    width: 100%;
+}
+
+#navBar .active .nav-link::after {
+    width: 100%;
+}
+
+.portLogo i {
+    font-size: 45px;
+    color: #35a22c;
+}
+
+.portLogo span {
+    font-size: 36px;
+    color: #fff;
+}
+
+/* CAROUSEL */
+/* B1 chỉnh kích thước ảnh ava
+B2 chỉnh chiều cao ảnh nền
+B3 chỉnh caption vào giữa carousel
+b4 chỉnh định dạng indicators */
+
+/* b1 */
+.portava {
+    width: 140px;
+    border-radius: 50%;
+}
+
+/* b2 */
+/* vm viewport width thường dùng cho fontsize, vùng nội dung chữ quan trọng mà khách hàng không muốn thay đổi nội dung(slogan của banner, quảng cáo hoặc caorousel) */
+/* vh viewport width thường dùng cho carousel
+vh đơn vị lấy kcihs thước của trình duyệt */
+#portCarouselID .carousel-item {
+    /* 100vh luôn luôn có phần trăm bằng với khung hình trình duyệt wed, không quan trọng */
+    height: 100vh;
+}
+
+#portCarouselID .carousel-item>img {
+    height: 100%;
+    filter: brightness(60%);
+}
+
+#portCarouselID .carousel-caption {
+    top: 50%;
+    left: 50%;
+    /* right: -50%; */
+    transform: translate(-50%, -50%);
+}
+
+/* AWARD */
+/* width 100% xét  */
+.award {
+    position: relative;
+    padding: 80px 0;
+}
+
+.award__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url(/img/memphis_3.png);
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    opacity: .5;
+}
+
+.award__left {
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 30%);
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    /* rạo độ mờ của gương,thuộc tính mới của css3 ra đời chung với object-fit và filter */
+    backdrop-filter: blur(8px);
+}

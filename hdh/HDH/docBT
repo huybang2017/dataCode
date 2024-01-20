@@ -1,0 +1,36 @@
+chiến lược cấp phát bộ nhớ
+	*first-fit: đi tuần tự và đặt tối đa vào các kích thước của nó nếu đủ
+	*Best-fit: đi tuần tự kiểm tra xem cái nào ít lãng phí bộ nhớ nhất thì chọn
+	*worst-fit: đi tuần tự chọn các ô có giá trị to nhất thì chọn
+	*Next-fit: đi lần lượt và chọn ô nhớ đủ lớn kế sau ô vừa được cấp
+	*last-fit: đi từ phải qua trái ô nào đủ bộ nhớ thì sẽ được cấp
+	
+		Thuật toán banker
+yêu cầu thêm tài nguyên process nào hợp lệ
+	<= avaiable (xét phần avaiable)
+	
+cấp phát đủ tài nguyên, tài nguyên thu hồi ? giá trị avaiavle:
+	need = max - allocation
+	so sánh avaiable với need
+	allocation + avaiable gốc
+
+
+		bảng phân đoạn
+cách tính địa chỉ logic: 
+= địa chỉ basic của segment tương ứng + địa chỉ logic cần tính
+vùng bộ nhớ = limit + base (sagement)
+địa chỉ vật lý cho các địa chỉ logic này không được vượt quá giới hạn (limit)
+
+		dạng mô hình phân trang
+lấy địa chỉ logic / số byte = địa chỉ dữ liệu(lấy phần nguyên không cần làm tròn) -> tìm vị trí địa chỉ dữ liệu
+địa chỉ vật lý = địa chỉ dữ liệu * số byte + (địa chỉ logic - số byte)
+
+		thuật toán thay thế trang FIFO
+cái gì nhiều nhất thì loại
+lỗi trang xảy ra khi trang đó bị thay đổi giá trị
+		thuật toán OPT
+chọn trang không dùng tới trong khoảng thời gian lâu nhất
+thay thế phần tử không có trong tương lai
+
+		thuật toán RLU
+thay thế phàn tử xa nhất trong quá khứ

@@ -1,0 +1,83 @@
+	- Cấu hình git cho user (chỉ cần làm 1 lần duy nhất)
+
+ + git config --global user.name "Your name"
+
+ + git config --global user.email "Your email"
+
+ 
+
+- git init: Khởi tạo git cho một project (chỉ cần dùng 1 lần duy nhất)
+
+ 
+
+- git status: Xem trạng thái hiện tại của thư mục làm việc, nó sẽ hiển thị những files thay đổi so với lần commit trước đó, đồng thời hiển thị trạng thái của các file đó như là đã được xác nhận để commit hay chưa
+
+ 
+
+- git add: Sắp xếp cái file đã bị thay đổi, thêm mới, hoặc xoá so với lần commit trước đó, để chuẩn bị cho lần commit tiếp theo
+
+ + git add filename1 filename2: Thêm một hoặc nhiều file bị thay đổi
+
+ + git add .: thêm toàn bộ tất cả file bị thay đổi
+
+ 
+
+- git commit: Xác nhận và lưu trữ các file đã thay đổi
+
+ + git commit -m "message commit"
+
+ 
+
+- git log: Xem lại lịch sử commit
+
+- git remote add origin url
+
+- git push: Đẩy tất cả commit của một branch từ local repository lên trên remote repository
+
+ + Nếu branch chưa tồn tại trên remote: git push -u origin branch-name
+
+ + Nếu branch đã tồn tại trên remote: git push
+
+ 
+
+- git clone: Tải remote repository về máy tính
+
+ + VD: git clone repository-url
+
+ 
+
+- git checkout: chuyển sang một branch(nhánh) khác
+
+ + git checkout branch-name: Chuyển branch
+
+ + git checkout -b branch-name: Tạo branch
+
+ 
+
+- git pull: Kéo tất cả commit mới nhất của một branch từ remote repository về local repository
+
+ 
+
+- git merge: Hợp nhất những commit ở một branch vào một branch khác
+
+VD: branch hiện tại đang là feature-a, ta chạy lệnh git merge master
+
+=> Hợp nhất những commit của branch master vào branch feature-a
+
+ 
+
+* Quy trình xử lý nếu bị conflict (feature-a tạo pull request vào master)
+
+B1: checkout về branch master
+
+B2: chạy git pull, để cập nhật những commit mới nhất cho master ở local
+
+B3: checkout về branch feature-a
+
+B4: chạy git merge master, để hợp nhất những commit của master vào feature-a
+
+B5: resolve conflict (thực hiện ở VSCode)
+
+B6: git add, git commit, git push
+
+B7: quay lại github để tạo pull request

@@ -1,0 +1,6 @@
+Mã bàn: B1;Số bàn: 2;Số ghế: 1;Tên bàn: 1;Trạng thái bàn: Bàn trống
+Mã bàn: B2;Số bàn: 4;Số ghế: 2;Tên bàn: 2;Trạng thái bàn: Đã đặt
+Mã bàn: B3;Số bàn: 8;Số ghế: 3;Tên bàn: 3;Trạng thái bàn: Bàn trống
+Mã bàn: B4;Số bàn: 2;Số ghế: 4;Tên bàn: 4;Trạng thái bàn: Bàn trống
+Mã bàn: B5;Số bàn: 4;Số ghế: 5;Tên bàn: 5;Trạng thái bàn: Bàn trống
+Mã bàn: B6;Số bàn: 9;Số ghế: 6;Tên bàn: 1;Trạng thái bàn: Bàn trống

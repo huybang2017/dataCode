@@ -1,0 +1,10 @@
+1, Cà phê sữa đá, Cà phê, 20000, true, Đá, true, Lớn, Không đường, Ghi chú cho cà phê sữa đá
+2, Trà đào, Trà, 15000, false, null, false, Nhỏ, null, Ghi chú cho trà đào
+3, Sinh tố việt quất, Sinh tố, 25000, false, null, true, Vừa, null, Ghi chú cho sinh tố việt quất
+4, Bạc xỉu, Cà phê, 18000, true, Sữa đặc, false, Nhỏ, Đường ít, Ghi chú cho bạc xỉu
+5, Nước lọc, Nước, 5000, false, null, false, Nhỏ, null, Ghi chú cho nước lọc
+6, Smoothie dưa hấu, Smoothie, 22000, true, Dưa hấu, true, Lớn, null, Ghi chú cho smoothie dưa hấu
+7, Soda chanh, Soda, 12000, true, Chanh, true, Vừa, null, Ghi chú cho soda chanh
+8, Kem vanilla, Kem, 15000, true, null, false, Nhỏ, null, Ghi chú cho kem vanilla
+9, Trà xanh matcha, Trà, 18000, false, null, true, Lớn, null, Ghi chú cho trà xanh matcha
+10, Caramel macchiato, Cà phê, 25000, true, Sữa đặc, true, Vừa, Caramel ít đường, Ghi chú cho caramel macchiato

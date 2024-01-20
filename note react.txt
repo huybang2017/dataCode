@@ -1,0 +1,13 @@
+npm -v: xem version
+npm init: khởi tạo npm
+npm i + npm muốn install: install 1 npm
+npm i: đọc trong file package.json xem có npm nào thì tải lại
+npm i -D parcel: tạo parcel
+--> json: tạo start và build
+--> bỏ livesever dùng lệnh:
+npm run start
+.gitignore: ẩn file không cần thiết
+
+
+REACT
+npx create-react-app project-name : khởi tạo react

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>portfolio</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- animate -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eius voluptatibus delectus laudantium ea
+            asperiores praesentium ad numquam incidunt aliquid?
+        </p>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed perspiciatis accusamus quod tenetur ratione
+            eligendi nihil alias mollitia consectetur commodi.
+        </p> -->
+
+      <nav class="navbar container navbar-expand-lg navbar-dark">
+        <a class="navbar-brand portLogo d-flex align-items-center" href="#">
+          <i class="fa-solid fa-dice-d20"></i>
+          <span>CyberPortfolio</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navBar"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navBar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Service</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+        </div>
+      </nav>
+    </header>
+    <div class="portCarousel">
+      <div
+        id="portCarouselID"
+        class="carousel slide carousel-fade"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#portCarouselID"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#portCarouselID" data-slide-to="1"></li>
+          <li data-target="#portCarouselID" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./img/finland.jpg" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <img
+                class="portava animate__animated animate__fadeInUp"
+                src="./img/01-3.jpg"
+                alt=""
+              />
+              <h5 class="animate__animated animate__fadeInUp">
+                First slide label
+              </h5>
+              <p class="animate__animated animate__fadeInUp">
+                Some representative placeholder content for the first slide.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./img/mountains-1.jpg" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <img
+                class="portava animate__animated animate__fadeInUp"
+                src="./img/02-3.jpg"
+                alt=""
+              />
+              <h5 class="animate__animated animate__fadeInUp">
+                Second slide label
+              </h5>
+              <p class="animate__animated animate__fadeInUp">
+                Some representative placeholder content for the second slide.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./img/mountains.jpg" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <img
+                class="portava animate__animated animate__fadeInUp"
+                src="./img/03-3.jpg"
+                alt=""
+              />
+              <h5 class="animate__animated animate__fadeInUp">
+                Third slide label
+              </h5>
+              <p class="animate__animated animate__fadeInUp">
+                Some representative placeholder content for the third slide.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </button> -->
+      </div>
+    </div>
+    <div class="project container">
+      <div class="title">
+        <h2>I Love What I Do</h2>
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+          posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis
+          sodales quis. Integer sit amet mattis quam.Vestibulum ante ipsum
+          primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+          Nulla mollis dapibus nunc
+        </p>
+      </div>
+      <div class="project__content">
+        <ul
+          class="nav nav-pills mb-3 justify-content-center"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item mx-1" role="presentation">
+            <button
+              class="nav-link active"
+              id="allproject-tab"
+              data-toggle="pill"
+              data-target="#allproject"
+              type="button"
+              role="tab"
+              aria-controls="allproject"
+              aria-selected="true"
+            >
+              All project
+            </button>
+          </li>
+          <li class="nav-item mx-1" role="presentation">
+            <button
+              class="nav-link"
+              id="illustration-tab"
+              data-toggle="pill"
+              data-target="#illustration"
+              type="button"
+              role="tab"
+              aria-controls="illustration"
+              aria-selected="false"
+            >
+              Illustrations
+            </button>
+          </li>
+          <li class="nav-item mx-1" role="presentation">
+            <button
+              class="nav-link"
+              id="photo-tab"
+              data-toggle="pill"
+              data-target="#photo"
+              type="button"
+              role="tab"
+              aria-controls="photo"
+              aria-selected="false"
+            >
+              Photo
+            </button>
+          </li>
+          <li class="nav-item mx-1" role="presentation">
+            <button
+              class="nav-link"
+              id="website-tab"
+              data-toggle="pill"
+              data-target="#website"
+              type="button"
+              role="tab"
+              aria-controls="website"
+              aria-selected="false"
+            >
+              Website
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="allproject"
+            role="tabpanel"
+            aria-labelledby="allproject-tab"
+          >
+            <div class="row">
+              <!-- mặc định 12 cột
+            50% 6 cột
+         -->
+              <div
+                class="animate__animated animate__zoomIn col-12 col-sm-6 col-lg-4 col-4"
+              >
+                <div class="card my-3">
+                  <img src="./img/g1.jpg" class="card-img-top" alt="g1" />
+                  <div class="card-body">
+                    <h3>Apologetic robot holding flowers</h3>
+                    <p class="card-text">Branding</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="animate__animated animate__zoomIn col-12 col-sm-6 col-lg-4 col-4"
+              >
+                <div class="card my-3">
+                  <img src="./img/g2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h3>Woman walking her small dog</h3>
+                    <p class="card-text">Illustrations</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="animate__animated animate__zoomIn col-12 col-sm-6 col-lg-4 col-4"
+              >
+                <div class="card my-3">
+                  <img src="./img/g3.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h3>Oil bottle branding</h3>
+                    <p class="card-text">Branding</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="animate__animated animate__zoomIn col-12 col-sm-6 col-lg-4 col-4"
+              >
+                <div class="card my-3">
+                  <img src="./img/g4.jpg" class="card-img-top" alt="g4" />
+                  <div class="card-body">
+                    <h3>Smiling Woman</h3>
+                    <p class="card-text">Illustrations</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="animate__animated animate__zoomIn col-12 col-sm-6 col-lg-4 col-4"
+              >
+                <div class="card my-3">
+                  <img src="./img/g5.jpg" class="card-img-top" alt="g5" />
+                  <div class="card-body">
+                    <h3>Drink can design</h3>
+                    <p class="card-text">Packaging</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="animate__animated animate__zoomIn col-12 col-sm-6 col-lg-4 col-4"
+              >
+                <div class="card my-3">
+                  <img src="./img/g6.jpg" class="card-img-top" alt="g6" />
+                  <div class="card-body">
+                    <h3>I love you hand gesture</h3>
+                    <p class="card-text">Illustrations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="illustration"
+            role="tabpanel"
+            aria-labelledby="illustration-tab"
+          >
+            <div class="row">
+              <!-- mặc định 12 cột
+            50% 6 cột
+         -->
+              <div class="col-4 animate__animated animate__zoomIn">
+                <div class="card">
+                  <img src="./img/g1.jpg" class="card-img-top" alt="g1" />
+                  <div class="card-body">
+                    <h3>Apologetic robot holding flowers</h3>
+                    <p class="card-text">Branding</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 animate__animated animate__zoomIn">
+                <div class="card">
+                  <img src="./img/g2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h3>Woman walking her small dog</h3>
+                    <p class="card-text">Illustrations</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 animate__animated animate__zoomIn">
+                <div class="card">
+                  <img src="./img/g3.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h3>Oil bottle branding</h3>
+                    <p class="card-text">Branding</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="photo"
+            role="tabpanel"
+            aria-labelledby="photo-tab"
+          >
+            <div class="row">
+              <!-- mặc định 12 cột
+            50% 6 cột
+         -->
+              <div class="col-4 animate__animated animate__zoomIn">
+                <div class="card my-3">
+                  <img src="./img/g1.jpg" class="card-img-top" alt="g1" />
+                  <div class="card-body">
+                    <h3>Apologetic robot holding flowers</h3>
+                    <p class="card-text">Branding</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 animate__animated animate__zoomIn">
+                <div class="card my-3">
+                  <img src="./img/g2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h3>Woman walking her small dog</h3>
+                    <p class="card-text">Illustrations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="website"
+            role="tabpanel"
+            aria-labelledby="website-tab"
+          >
+            <div class="row">
+              <!-- mặc định 12 cột
+            50% 6 cột
+         -->
+              <div class="col-4 animate__animated animate__zoomIn">
+                <div class="card">
+                  <img src="./img/g1.jpg" class="card-img-top" alt="g1" />
+                  <div class="card-body">
+                    <h3>Apologetic robot holding flowers</h3>
+                    <p class="card-text">Branding</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill"></div>
+    <div class="award">
+      <div class="award__overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-5">
+            <div class="award__left">
+              <h2>Our Achievement and Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              </p>
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="award__right">
+              <p>
+                Luctus porta semper aptent morbi. Vestibulum lectus tempus augue
+                dictumst enim commodo facilisis. Mus laoreet scelerisque
+                habitant urna dui sem diam. Purus dis nam eget. Scelerisque
+                placerat lectus lorem etiam. Elementum integer phasellus lectus.
+              </p>
+            </div>
+            <div class="row">
+              <div class="col">
+                <img class="img-fluid" src="./img/award-1.png" alt="" />
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="./img/award-2.png" alt="" />
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="./img/award-3.png" alt="" />
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="./img/award-4.png" alt="" />
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="./img/award-5.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

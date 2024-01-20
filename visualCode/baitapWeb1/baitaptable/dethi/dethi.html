@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body table tr td {
+            border: 1px solid black;
+        }
+
+        body table {
+            width: 500px;
+            height: 250px;
+        }
+
+        body table tr td input {
+            width: 80%;
+            height: 30px;
+        }
+
+        body table tr td {
+            text-align: center;
+        }
+
+        body table tr td button {
+            width: 70px;
+            height: 25px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td colspan="20" style="text-transform: uppercase;">chương trình tính toán cơ bản</td>
+        </tr>
+        <tr>
+            <td>Nhập số A</td>
+            <td>
+                <input type="text" id="TextsoA">
+            </td>
+        </tr>
+        <tr>
+            <td>Nhập số B</td>
+            <td>
+                <input type="text" id="TextsoB">
+            </td>
+        </tr>
+        <tr>
+            <td>Kết Quả</td>
+            <td>
+                <input type="text" id="TextKetQua" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="20">
+                <button type="button" id="tong">Tổng</button>
+                <button type="button" id="hieu">Hiệu</button>
+                <button type="button" id="tich">Tích</button>
+                <button type="button" id="thuong">Thương</button>
+            </td>
+        </tr>
+    </table>
+    <script src="./dethi.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+Mã KH: KH1670316299;Tên: Tay Nguyen;Số Điện Thoại: 0354454813;Tuổi: 20;Địa Chỉ: Tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+
+Mã KH: KH1753924241;Tên: Tay Nguyen ;Số Điện Thoại: 0846777902;Tuổi: 20;Địa Chỉ: Tk;Giới Tính: Nu;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+
+Mã KH: KH1486850219;Tên: Tay Nguyen;Số Điện Thoại: 0354454813;Tuổi: 20;Địa Chỉ: tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+
+Mã KH: KH1418681965;Tên: Nam Nguyen;Số Điện Thoại: 0377769567;Tuổi: 24;Địa Chỉ: Thang kien;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+
+Mã KH: KH202375708;Tên: test 1;Số Điện Thoại: 0344443333;Tuổi: 20;Địa Chỉ: tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 12;Giảm Giá: 0.0;
+
+Mã KH: KH1285558069;Tên: Tran Tuan;Số Điện Thoại: 0654444546;Tuổi: 20;Địa Chỉ: Thang kien;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 12;Giảm Giá: 0.0;
+
+Mã KH: KH1049613083;Tên: Tay111;Số Điện Thoại: 0354454581;Tuổi: 20;Địa Chỉ: Tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 12;Giảm Giá: 0.0;
+

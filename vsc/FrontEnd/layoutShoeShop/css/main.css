@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,800;6..12,900;6..12,1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+.header .container-fluid {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header .container-fluid .header-logo {
+  display: flex;
+}
+.header .container-fluid .header-logo i {
+  font-size: 50px;
+  color: #cc9a06;
+}
+.header .container-fluid .header-logo p {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav {
+  font-weight: 600;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .dropdown-menu {
+  width: 30vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .dropdown-menu .dropdown-item {
+  text-align: center;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .home .nav-link {
+  transition: all 0.5s;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .home .nav-link:hover {
+  text-decoration: underline;
+  color: #984c0c;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .product .nav-link {
+  transition: all 0.5s;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .product .nav-link:hover {
+  text-decoration: underline;
+  color: #984c0c;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .review .nav-link {
+  transition: all 0.5s;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .review .nav-link:hover {
+  text-decoration: underline;
+  color: #984c0c;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .aboutUs .nav-link {
+  transition: all 0.5s;
+}
+.header .container-fluid .header-navigation .container-fluid #navbarNav .navbar-nav .aboutUs .nav-link:hover {
+  text-decoration: underline;
+  color: #984c0c;
+}
+.header .container-fluid .header-account {
+  display: flex;
+  justify-content: space-around;
+}
+.header .container-fluid .header-account i {
+  font-size: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */

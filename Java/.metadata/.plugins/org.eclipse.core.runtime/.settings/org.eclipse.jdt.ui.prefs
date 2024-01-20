@@ -1,0 +1,16 @@
+LexicalSortingAction.isChecked=true
+MemberFilterActionGroup.org.eclipse.jdt.ui.JavaOutlinePage.8=true
+content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaPostfixProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.javaChainProposalCategory\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.util.Iterator"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.io.Closeable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.lang.AutoCloseable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="demoOOP.demoOOP$sinhVien"><rhs name\="demoOOP.demoOOP$sinhVien"/></lhs><lhs name\="baitapOOP.baitapOOP$ClassificationStudent"><rhs name\="baitapOOP.baitapOOP$Student"/></lhs><lhs name\="baitapOOP.baitapOOP$People"><rhs name\="baitapOOP.baitapOOP$Student"/></lhs><lhs name\="baitapOOP.baitapOOP$Student"><rhs name\="baitapOOP.baitapOOP$Student"/></lhs><lhs name\="handleMaganement.ObjEmployee.Employee"><rhs name\="handleMaganement.ObjEmployee.OrderEmployee"/></lhs><lhs name\="handleMaganement.Person"><rhs name\="handleMaganement.ObjEmployee.OrderEmployee"/></lhs><lhs name\="handleMaganement.ObjEmployee.OrderEmployee"><rhs name\="handleMaganement.ObjEmployee.OrderEmployee"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.RandomAccess"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Cloneable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.AbstractList"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.AbstractCollection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.ArrayList"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="handleMaganement.ObjOrder.SanPham"><rhs name\="handleMaganement.ObjOrder.SanPham"/></lhs><lhs name\="handleMaganement.ObjTable.TableManager"><rhs name\="handleMaganement.ObjTable.TableManager"/></lhs><lhs name\="HandleList.ListCustomer"><rhs name\="HandleList.ListCustomer"/></lhs></history>
+content_assist_number_of_computers=15
+eclipse.preferences.version=1
+markOccurrences=false
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.internal.ui.wizards.buildpaths.NewSourceContainerPage.openSetting=false
+org.eclipse.jdt.ui.formatterprofiles.version=23
+sourceHoverBackgroundColor=0,0,0
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

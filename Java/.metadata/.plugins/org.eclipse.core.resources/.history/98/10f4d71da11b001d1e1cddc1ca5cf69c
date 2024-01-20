@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class LuongNhanVien {
+
+	public LuongNhanVien() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		int time_work;
+		float rate;
+		double payment;
+		Scanner nhap = new Scanner(System.in);
+		
+		System.out.print("Nhập số giờ làm: ");
+		time_work = Integer.parseInt(nhap.nextLine());
+		
+		System.out.print("Nhập lương theo giờ ");
+		rate = Float.parseFloat(nhap.nextLine());
+		
+		if(time_work > 40){
+			payment = 40 * rate + 1.5 * (time_work - 40);
+		}else {
+			payment = time_work * rate;
+		}
+		
+		System.out.println("lương của nhân viên là: " + payment);
+	}
+
+}

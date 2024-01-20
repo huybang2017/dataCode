@@ -1,0 +1,8 @@
+DV1;Giat ui quan ao;90.000
+DV2;Dua don san bay;150.000
+DV3;SPa;120.000
+DV4;Fitness center;100.000
+DV5;San golf va san tennis;120.000
+DV6;Casino;500.000
+DV7;Thue nguoi yeu;500.000
+DV8;Yeu thue;50.000

@@ -1,0 +1,41 @@
+các loại bộ nhớ 
+cache > ram > ssd > hdd
+quản bộ nhớ ảo:
+physical memory address bộ nhớ thật
+virtural page bộ nhớ ảo
+
+
+bộ nhớ kích thước 320mb
+địa chỉ logic 48bit 
+kích thước trang 8kb
+page frame: số trang thật hoặc số trang vật lý
+số trang ảo: số trang logic
+KB = 2^10B
+bit = B
+
+số trang vật lý: kích thước bộ nhớ vật lý/kích thước trang quy đổi về bit(B)
+
+số trang ảo(logic): kích thước không gian tiến trình(trang ảo)/kích thước trang
+
+kích thước không gian tiến trình = 2 ^ địa chỉ logic quy về bit hết
+
+
+Công thức liên quan đến trang và frame:
+
+    Số lượng trang trong không gian địa chỉ logic (NPNP​):
+    NP=Kıˊch thước bộ nhớ ảoKıˊch thước trangNP​=Kıˊch thước trangKıˊch thước bộ nhớ ảo​
+
+    Số lượng frame trong bộ nhớ vật lý (NFNF​):
+    NF=Kıˊch thước bộ nhớ vật lyˊKıˊch thước frameNF​=Kıˊch thước frameKıˊch thước bộ nhớ vật lyˊ​​
+
+    Số bit cho địa chỉ logic (Soˆˊ bit địa chỉ logicSoˆˊ bit địa chỉ logic):
+    Soˆˊ bit địa chỉ logic=log⁡2(NP)+log⁡2(Kıˊch thước trang)Soˆˊ bit địa chỉ logic=log2​(NP​)+log2​(Kıˊch thước trang)
+
+    Số bit cho địa chỉ physical (Soˆˊ bit địa chỉ physicalSoˆˊ bit địa chỉ physical):
+    Soˆˊ bit địa chỉ physical=log⁡2(NF)+log⁡2(Kıˊch thước trang)Soˆˊ bit địa chỉ physical=log2​(NF​)+log2​(Kıˊch thước trang)
+
+4 điều kiện gây ra deadlock
+-> dùng chung tài nguyên tương hỗ đoạn code
+-> process giữ tài nguyên cũ khi cố gắng xin thêm tài nguyên mới
+-> xuất hiện vòng khép kín giữa các process chờ nhau
+đồ thị rag

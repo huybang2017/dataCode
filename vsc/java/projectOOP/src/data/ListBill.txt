@@ -1,0 +1,27 @@
+Mã KH: KH1670316299;Tên: Tay Nguyen;Số Điện Thoại: 0354454813;Tuổi: 20;Địa Chỉ: Tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+2023-12-19
+Mã KH: KH1753924241;Tên: Tay Nguyen ;Số Điện Thoại: 0846777902;Tuổi: 20;Địa Chỉ: Tk;Giới Tính: Nu;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+2023-12-19
+Mã sản phẩm: SP01, Ten san pham: Cà phê sữa đá, Đá: Có, Size: Nhỏ, Ghi chú: 1
+Mã KH: KH1486850219;Tên: Tay Nguyen;Số Điện Thoại: 0354454813;Tuổi: 20;Địa Chỉ: tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+2023-12-19
+Mã sản phẩm: SP01, Ten san pham: Cà phê sữa đá, Đá: Có, Size: Nhỏ, Ghi chú: 1
+Mã KH: KH1418681965;Tên: Nam Nguyen;Số Điện Thoại: 0377769567;Tuổi: 24;Địa Chỉ: Thang kien;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 5;Giảm Giá: 0.0;
+2023-12-19
+Mã sản phẩm: SP03, Ten san pham: Sinh tố việt quất, Đá: Có, Size: Nhỏ, Ghi chú: 1
+Mã KH: KH202375708;Tên: test 1;Số Điện Thoại: 0344443333;Tuổi: 20;Địa Chỉ: tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 12;Giảm Giá: 0.0;
+2023-12-19
+Mã sản phẩm: SP01, Ten san pham: Cà phê sữa đá, Đá: Có, Size: Nhỏ, Ghi chú: 2
+Mã sản phẩm: SP01, Ten san pham: Cà phê sữa đá, Đá: Có, Size: Nhỏ, Ghi chú: 2
+Mã sản phẩm: SP01, Ten san pham: Cà phê sữa đá, Đá: Có, Size: Nhỏ, Ghi chú: 2
+Mã sản phẩm: SP03, Ten san pham: Sinh tố việt quất, Đá: Có, Size: Nhỏ, Ghi chú: 1
+Mã KH: KH1285558069;Tên: Tran Tuan;Số Điện Thoại: 0654444546;Tuổi: 20;Địa Chỉ: Thang kien;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 12;Giảm Giá: 0.0;
+2023-12-19
+Mã sản phẩm: SP01, Ten san pham: Cà phê sữa đá, Đá: Có, Size: Nhỏ, Ghi chú: ko cos
+Mã KH: KH1049613083;Tên: Tay111;Số Điện Thoại: 0354454581;Tuổi: 20;Địa Chỉ: Tk;Giới Tính: Nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 12;Giảm Giá: 0.0;
+2023-12-19
+Mã sản phẩm: SP01, Ten san pham: Cà phê sữa đá, Đá: Không, Size: Nhỏ, Ghi chú: 1
+Mã KH: KH221000457;Tên: quý;Số Điện Thoại: 1234567891;Tuổi: 15;Địa Chỉ: hcm;Giới Tính: nam;Loại Khách Hàng: Không Thành Viên;Tháng Sinh Nhật: 3;Giảm Giá: 0.0;
+2023-12-19
+Mã sản phẩm: SP02, Ten san pham: Trà đào, Đá: Không, Size: Nhỏ, Ghi chú: không
+Mã sản phẩm: SP04, Ten san pham: Bạc xỉu, Đá: Không, Size: Nhỏ, Ghi chú: nhiều đường
